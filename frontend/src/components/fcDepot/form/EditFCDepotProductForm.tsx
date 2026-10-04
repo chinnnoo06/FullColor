@@ -127,19 +127,19 @@ export const EditFCDepotProductForm = ({ fcDepotProduct }: { fcDepotProduct: TFC
 
                 <div className="form-group">
                     <Label htmlFor="retailPrice">Precio menudeo</Label>
-                    <Input type="number" id="retailPrice" step="0.01" min="0" placeholder="0.00" {...register("retailPrice")} />
+                    <Input type="number" id="retailPrice" step="0.01" min="0" placeholder="0.00" {...register("retailPrice", { valueAsNumber: true })} />
                     <SpanError message={errors.retailPrice?.message} />
                 </div>
 
                 <div className="form-group">
                     <Label htmlFor="midWholesalePrice" optional>Precio medio mayoreo</Label>
-                    <Input type="number" id="midWholesalePrice" step="0.01" min="0" placeholder="0.00" {...register("midWholesalePrice")} />
+                    <Input type="number" id="midWholesalePrice" step="0.01" min="0" placeholder="0.00" {...register("midWholesalePrice", { setValueAs: (v) => v === '' ? null : Number(v) })} />
                     <SpanError message={errors.midWholesalePrice?.message} />
                 </div>
 
                 <div className="form-group">
                     <Label htmlFor="wholesalePrice" optional>Precio mayoreo</Label>
-                    <Input type="number" id="wholesalePrice" step="0.01" min="0" placeholder="0.00" {...register("wholesalePrice")} />
+                    <Input type="number" id="wholesalePrice" step="0.01" min="0" placeholder="0.00" {...register("wholesalePrice", { setValueAs: (v) => v === '' ? null : Number(v) })} />
                     <SpanError message={errors.wholesalePrice?.message} />
                 </div>
             </FormSection>

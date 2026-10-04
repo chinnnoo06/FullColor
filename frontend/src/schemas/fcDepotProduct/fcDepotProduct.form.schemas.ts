@@ -3,10 +3,7 @@ import { z } from "zod"
 const IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"]
 const IMAGE_MAX_SIZE = 10 * 1024 * 1024
 
-const optionalPrice = z.preprocess(
-    (val) => (val === '' || val === null || val === undefined) ? null : Number(val),
-    z.number({ message: "Debe ser un número válido" }).min(0, { message: "Debe ser mayor o igual a 0" }).nullable()
-)
+const optionalPrice = z.number({ message: "Debe ser un número válido" }).min(0, { message: "Debe ser mayor o igual a 0" }).nullable()
 
 export const CreateFCDepotProductFormSchema = z.object({
     name: z.string().trim().min(1, { message: "Campo obligatorio" }).max(100, { message: "Máximo 100 caracteres" }),
@@ -19,7 +16,7 @@ export const CreateFCDepotProductFormSchema = z.object({
             })
         )
         .min(1, { message: "Agrega al menos un color" }),
-    retailPrice: z.coerce.number({ message: "Campo obligatorio" }).min(0.01, { message: "Debe ser mayor a 0" }),
+    retailPrice: z.number({ message: "Campo obligatorio" }).min(0.01, { message: "Debe ser mayor a 0" }),
     midWholesalePrice: optionalPrice,
     wholesalePrice: optionalPrice,
     seo: z.object({
