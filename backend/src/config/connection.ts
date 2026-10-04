@@ -11,7 +11,7 @@ export const connection = async () => {
         }
 
         await mongoose.connect(mongoUri);
-        console.log(colors.magenta.bold("Successfully connected to the octa_studio_db database"));
+        console.log(colors.magenta.bold("Successfully connected to the full_color_db database"));
     } catch (error) {
         console.log(colors.red.bold("Could not connect to the database"));
         console.log(error);
