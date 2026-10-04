@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@custom-variant hover (&:hover);
+
+@theme inline {
+  --breakpoint-small: 400px;
+
+  --color-primary: #76B82A;
+  --color-secondary: #005CA9;
+  --color-thrird: #1F1F1F;
+  --color-fourth: #FFFFFF;
+
+  --font-sans: var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-barlow: var(--font-barlow), Barlow, ui-sans-serif, system-ui, sans-serif;
+  --font-beyno: var(--font-beyno-local), Beyno, Impact, "Arial Black", sans-serif;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+/* ============================================================================
+   MARQUEE — usado por components/ui/Marquee.tsx
+   ========================================================================== */
+@keyframes marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-left var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee-track[data-direction="right"] {
+  animation-name: marquee-right;
+}
+
+.marquee-root:hover .marquee-track[data-pause-on-hover="true"] {
+  animation-play-state: paused;
+}
+
+/* ============================================================================
+   TEXTO CON DEGRADADO DE MARCA EN MOVIMIENTO — primary → secondary → primary
+   ========================================================================== */
+@keyframes gradient-shift {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
+  }
+}
+
+.text-gradient-brand {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* La cursiva sobresale por la derecha de la caja de texto: se deja aire para que el recorte no la corte. */
+  padding-inline-end: 0.15em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: gradient-shift var(--gradient-duration, 4s) linear infinite;
+}
+
+/* ============================================================================
+   ACCESIBILIDAD — respeta prefers-reduced-motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .text-gradient-brand {
+    animation: none !important;
+  }
+}
