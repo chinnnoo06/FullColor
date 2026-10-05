@@ -41,6 +41,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
       `connect-src 'self'${isDev ? ' ws: wss:' : ''}`,
+      "frame-src https://www.google.com",
       "frame-ancestors 'self'",
       "base-uri 'self'",
       "form-action 'self'",

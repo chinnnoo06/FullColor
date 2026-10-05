@@ -8,7 +8,7 @@ import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
 import { ContactSection } from '@/components/contact/ContactSection'
 
-export default function page() {
+export default function HomePage() {
   return (
     <>
       <Hero />

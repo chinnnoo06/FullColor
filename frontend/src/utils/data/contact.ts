@@ -1,10 +1,10 @@
 import { WhatsAppLineKeySchema, TWhatsAppLineKey } from '@/schemas/enums.schemas';
 import type { TContactProcessStep, TContactSocialItem, TWhatsAppLineCard } from '@/types/content.types';
 import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa6';
-import ImgPrincipal from '@/assets/media/img5.webp';
-import ImgImpresiones from '@/assets/media/img10.webp';
-import ImgLaserDtf from '@/assets/media/img15.webp';
-import ImgDepotWeb from '@/assets/media/img3.webp';
+import ImgPrincipal from '@/assets/media/img1.webp';
+import ImgImpresiones from '@/assets/media/img11.webp';
+import ImgLaserDtf from '@/assets/media/img12.webp';
+import ImgDepotWeb from '@/assets/media/img15.webp';
 
 const WHATSAPP_MESSAGE = 'Hola, me interesa cotizar un proyecto con FullColor.';
 
@@ -39,6 +39,11 @@ export const CONTACT = {
   email: {
     address: 'fullcolorgdl@gmail.com',
     href: 'mailto:fullcolorgdl@gmail.com',
+  },
+
+  address: {
+    display: 'C. José Fernando Abascal y Souza 362, San Juan de Dios, 44360 Guadalajara, Jal.',
+    href: 'https://maps.google.com/?q=C.+José+Fernando+Abascal+y+Souza+362,+San+Juan+de+Dios,+44360+Guadalajara,+Jal.',
   },
 
   social: {
