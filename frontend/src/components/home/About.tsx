@@ -8,7 +8,7 @@ import ImgAbout from '@/assets/media/img1.webp'
 
 export const About = () => {
     return (
-        <section id="nosotros" data-section="home-about" className="bg-thrird py-15 lg:py-20">
+        <section id="home-about" data-section="home-about" className="bg-thrird py-15 lg:py-20">
             
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <div className="flex flex-col gap-10 lg:flex-row lg:gap-15 lg:items-center">

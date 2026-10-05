@@ -6,7 +6,7 @@ import { TRequestWithFCServiceCategory } from "../types/express/fcServiceCategor
 
 export class FCServiceCategoryController {
 
-    static createFCServiceCategory = async (req: TRequestWithFCServiceCategory<{}, unknown, TFCServiceCategoryDto>, res: Response, next: NextFunction) => {
+    static createFCServiceCategory = async (req: Request<{}, {}, TFCServiceCategoryDto>, res: Response, next: NextFunction) => {
         const data = req.body;
         const files = req.files as TMulterFiles;
 
@@ -24,7 +24,7 @@ export class FCServiceCategoryController {
         }
     }
 
-    static updateFCServiceCategory = async (req: TRequestWithFCServiceCategory<{}, unknown, TFCServiceCategoryDto>, res: Response, next: NextFunction) => {
+    static updateFCServiceCategory = async (req: TRequestWithFCServiceCategory<{}, {}, TFCServiceCategoryDto>, res: Response, next: NextFunction) => {
         const data = req.body;
 
         try {

@@ -2,10 +2,10 @@ import { LinkButton } from '@/components/ui/buttons/LinkButton';
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-[70svh] flex-col items-center justify-center gap-5 px-5 lg:px-15 text-center">
-      <p className="text-secondary/30 text-7xl leading-none font-bold lg:text-9xl">404</p>
+    <main className="flex h-screen flex-col items-center justify-center gap-5 px-5 lg:px-15 text-center">
+      <p className="font-barlow text-primary text-7xl leading-none font-bold lg:text-9xl">404</p>
 
-      <h1 className="text-secondary text-2xl font-bold uppercase lg:text-3xl">
+      <h1 className="font-barlow text-secondary text-2xl lg:text-3xl font-bold uppercase">
         Esta página no existe
       </h1>
 
@@ -14,7 +14,9 @@ export default function NotFound() {
         llegas a todo lo demás.
       </p>
 
-      <LinkButton href="/">Volver Al Inicio</LinkButton>
+      <div className="flex flex-col items-center gap-5 sm:flex-row">
+        <LinkButton href="/">Volver Al Inicio</LinkButton>
+      </div>
     </main>
   );
 }

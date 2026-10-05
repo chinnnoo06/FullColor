@@ -1,25 +1,28 @@
-import { Reveal } from '../ui/Reveal'
-import { SectionTitle } from '../ui/SectionTitle'
-import { SectionLabel } from '../ui/SectionLabel'
-import { LinkButton } from '../ui/buttons/LinkButton'
+import { Suspense } from 'react'
+import { Reveal } from '../../ui/Reveal'
+import { SectionTitle } from '../../ui/SectionTitle'
+import { SectionLabel } from '../../ui/SectionLabel'
+import { LinkButton } from '../../ui/buttons/LinkButton'
 import { ContactForm } from './ContactForm'
 import { fadeUp, fadeUpScale } from '@/utils/motion/reveal'
 import { CONTACT } from '@/utils/data/contact'
 
-type TContactSectionProps = {
+type TContactInfoProps = {
     id?: string
     dataSection?: string
     showMoreLink?: boolean
 }
 
-export const ContactSection = ({ id, dataSection = 'contact-form', showMoreLink = false }: TContactSectionProps) => {
+export const ContactInfo = ({ id = 'contact-form', dataSection = 'contact-form', showMoreLink = false }: TContactInfoProps) => {
     return (
-        <section id={id} data-section={dataSection} className="bg-thrird py-15 lg:py-20">
+        <section id={id} data-section={dataSection} className="scroll-mt-15 lg:scroll-mt-20 bg-thrird py-15 lg:py-20">
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-15">
 
                     <Reveal variants={fadeUpScale} className="order-2 lg:order-1 w-full lg:w-[50%] xl:w-[60%]">
-                        <ContactForm />
+                        <Suspense>
+                            <ContactForm />
+                        </Suspense>
                     </Reveal>
 
                     <Reveal variants={fadeUp} className="order-1 lg:order-2 flex w-full flex-col gap-5 lg:w-[50%] xl:w-[40%]">

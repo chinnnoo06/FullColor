@@ -4,8 +4,11 @@ import { originHeader } from "../api.headers";
 import { getToken } from "../auth/auth.token";
 import { FCServiceSchema } from "@/schemas/fcService/fcService.schemas";
 
-export const getFCServicesService = async (page: number = 1) => {
-  const url = `${process.env.API_URL}/fc-services?page=${page}`;
+export const getFCServicesService = async (page: number = 1, category?: string) => {
+  const params = new URLSearchParams({ page: String(page) });
+  if (category) params.set('category', category);
+
+  const url = `${process.env.API_URL}/fc-services?${params}`;
 
   const req = await fetch(url, {
     method: "GET",
@@ -14,6 +17,10 @@ export const getFCServicesService = async (page: number = 1) => {
     },
     next: { revalidate: 3600, tags: ["fcServices"] },
   });
+
+  if (req.status === 404) {
+    return null;
+  }
 
   if (!req.ok) {
     throw new Error("Request Failed");

@@ -35,7 +35,7 @@ export const ImageField = ({ image, onChange, error, id = 'image', label = 'Imag
             <div className="flex flex-col gap-5">
                 <label
                     htmlFor={id}
-                    className="border-primary/50 text-fourth/75 hover:border-primary flex cursor-pointer flex-col items-center justify-center gap-2.5 rounded-lg border border-dashed px-5 py-10 text-center text-xs transition-colors duration-300 lg:text-sm"
+                    className="border-primary/30 text-fourth/75 hover:border-primary flex cursor-pointer flex-col items-center justify-center gap-2.5 rounded-lg border border-dashed px-5 py-10 text-center text-xs transition-colors duration-300 lg:text-sm"
                 >
                     <FiImage aria-hidden="true" className="size-5 lg:size-6" />
                     {image ? 'Haz clic para cambiar la imagen' : 'Haz clic para elegir una imagen'} · JPG, PNG o WebP

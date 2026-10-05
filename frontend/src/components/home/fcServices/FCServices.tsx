@@ -5,15 +5,16 @@ import { motion, useInView } from 'framer-motion'
 import { Reveal } from '../../ui/Reveal'
 import { SectionTitle } from '../../ui/SectionTitle'
 import { LinkButton } from '../../ui/buttons/LinkButton'
-import { ServiceCard, type TServiceCardRef } from './ServiceCard'
+import { FCServiceCategoryCard } from './FCServiceCategoryCard'
+import { type TServiceCardRef } from './types'
 import { fadeUp, staggerParent } from '@/utils/motion/reveal'
-import { SERVICES } from '@/utils/data/services'
 import { SectionCurve } from '@/components/ui/SectionCurve'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { TFCServiceCategory } from '@/schemas/fcServiceCategory/fcServiceCategory.schemas'
 
-export const Services = () => {
+export const FCServices = ({ fcServiceCategories }: { fcServiceCategories: TFCServiceCategory[] }) => {
     const refs = useMemo<TServiceCardRef[]>(
-        () => SERVICES.map(() => createRef<HTMLLIElement>()),
+        () => fcServiceCategories.map(() => createRef<HTMLLIElement>()),
         []
     )
 
@@ -21,7 +22,7 @@ export const Services = () => {
     const inView = useInView(listRef, { once: true, amount: 0.1 })
 
     return (
-        <section id="servicios" data-section="home-services" className="relative bg-fourth py-15 lg:py-20">
+        <section id="home-services" data-section="home-services" className="relative bg-fourth py-15 lg:py-20">
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-15">
                     <Reveal variants={fadeUp} className="flex w-full flex-col gap-5 lg:sticky lg:top-25 lg:w-[50%] xl:w-[40%]">
@@ -46,10 +47,10 @@ export const Services = () => {
                         initial="hidden"
                         animate={inView ? 'show' : 'hidden'}
                     >
-                        {SERVICES.map((service, i) => (
-                            <ServiceCard
-                                key={service.slug}
-                                service={service}
+                        {fcServiceCategories.map((fcServiceCategory, i) => (
+                            <FCServiceCategoryCard
+                                key={fcServiceCategory.slug}
+                                fcServiceCategory={fcServiceCategory}
                                 index={i}
                                 cardRef={refs[i]}
                                 nextRef={refs[i + 1]}

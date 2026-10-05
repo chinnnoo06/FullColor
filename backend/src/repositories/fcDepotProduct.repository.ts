@@ -19,7 +19,7 @@ export const fcDepotProductRepository = {
         return FCDepotProduct.paginate({}, {
             page,
             limit,
-            sort: { _id: -1 }
+            sort: { createdAt: 1 }
         });
     },
 

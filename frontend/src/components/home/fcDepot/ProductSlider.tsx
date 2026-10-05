@@ -9,7 +9,7 @@ export const ProductSlider = ({ products }: { products: TProduct[] }) => {
         <Marquee duration={40} gap={20}>
             {track.map((product, i) => (
                 <figure key={`${product.name}-${i}`} className="flex w-30 flex-col gap-2.5 lg:w-40">
-                    <span className="border-fourth/30 bg-thrird relative aspect-square w-full overflow-hidden rounded-xl border">
+                    <div className="border-fourth/30 bg-thrird relative aspect-3/4 w-full overflow-hidden rounded-xl border">
                         <Image
                             src={product.image}
                             alt={product.name}
@@ -17,7 +17,7 @@ export const ProductSlider = ({ products }: { products: TProduct[] }) => {
                             sizes="160px"
                             className="object-cover object-center"
                         />
-                    </span>
+                    </div>
                     <figcaption className="font-barlow text-fourth/75 text-xs lg:text-sm tracking-[0.15em] uppercase truncate">
                         {product.name}
                     </figcaption>

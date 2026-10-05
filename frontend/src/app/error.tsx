@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { LinkButton } from '@/components/ui/buttons/LinkButton';
+import { Button } from '@/components/ui/buttons/Button';
 
 type TErrorProps = {
   error: Error & { digest?: string };
@@ -14,10 +15,10 @@ export default function ErrorPage({ error, reset }: TErrorProps) {
   }, [error]);
 
   return (
-    <main className="flex min-h-[70svh] flex-col items-center justify-center gap-5 px-5 lg:px-15 text-center">
-      <p className="text-secondary/30 text-7xl leading-none font-bold lg:text-9xl">500</p>
+    <main className="flex h-screen flex-col items-center justify-center gap-5 px-5 lg:px-15 text-center">
+      <p className="font-barlow text-primary text-7xl leading-none font-bold lg:text-9xl">500</p>
 
-      <h1 className="text-secondary text-2xl font-bold uppercase lg:text-3xl">
+      <h1 className="font-barlow text-secondary text-2xl lg:text-3xl font-bold uppercase">
         Algo salió mal
       </h1>
 
@@ -27,13 +28,7 @@ export default function ErrorPage({ error, reset }: TErrorProps) {
       </p>
 
       <div className="flex flex-col items-center gap-5 sm:flex-row">
-        <button
-          type="button"
-          onClick={reset}
-          className="border-secondary bg-secondary text-primary hover:bg-primary hover:text-secondary inline-flex cursor-pointer items-center justify-center rounded-full border px-5 py-2.5 text-sm font-medium transition-colors duration-300 lg:text-base"
-        >
-          Reintentar
-        </button>
+        <Button variant="secondary" onClick={reset}>Reintentar</Button>
 
         <LinkButton href="/">Volver Al Inicio</LinkButton>
       </div>

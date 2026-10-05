@@ -1,22 +1,21 @@
 'use client'
 
-import { useCallback, useEffect, useRef, type RefObject } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
-import { TService } from '@/types/content.types'
 import { stackCardRange, stackCardScaleAt, stackCardTop, type TStackRange } from '@/utils/motion/stack'
 import { staggerItem } from '@/utils/motion/reveal'
-
-export type TServiceCardRef = RefObject<HTMLLIElement | null>
+import { TFCServiceCategory } from '@/schemas/fcServiceCategory/fcServiceCategory.schemas'
+import { type TServiceCardRef } from './types'
 
 type TServiceCardProps = {
-    service: TService
+    fcServiceCategory: TFCServiceCategory
     index: number
     cardRef: TServiceCardRef
     nextRef?: TServiceCardRef
 }
 
-export const ServiceCard = ({ service, index, cardRef, nextRef }: TServiceCardProps) => {
+export const FCServiceCategoryCard = ({ fcServiceCategory, index, cardRef, nextRef }: TServiceCardProps) => {
     const reduced = useReducedMotion()
     const { scrollY } = useScroll()
     const range = useRef<TStackRange | null>(null)
@@ -45,8 +44,8 @@ export const ServiceCard = ({ service, index, cardRef, nextRef }: TServiceCardPr
             <div className="bg-thrird flex flex-col sm:flex-row sm:items-stretch lg:flex-col xl:flex-row xl:items-stretch overflow-hidden rounded-xl shadow-lg ">
                 <div className="relative h-50 w-full sm:w-90 sm:h-65 lg:w-full lg:h-50 xl:w-90 xl:h-65 shrink-0 sm:order-2 lg:order-1 xl:order-2">
                     <Image
-                        src={service.image}
-                        alt=""
+                        src={`${process.env.NEXT_PUBLIC_FC_SERVICE_CATEGORIES_IMAGE_URL}/${fcServiceCategory.image}`}
+                        alt={fcServiceCategory.name}
                         fill
                         sizes="(min-width: 1024px) 260px, 100vw"
                         className="object-cover object-center"
@@ -62,11 +61,11 @@ export const ServiceCard = ({ service, index, cardRef, nextRef }: TServiceCardPr
                         </span>
 
                         <h3 className="font-barlow text-fourth text-2xl lg:text-3xl font-bold uppercase">
-                            {service.title}
+                            {fcServiceCategory.name}
                         </h3>
 
                         <p className="text-fourth/75 text-base lg:text-lg">
-                            {service.description}
+                            {fcServiceCategory.description}
                         </p>
                     </div>
                 </div>

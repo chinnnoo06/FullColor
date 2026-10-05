@@ -19,7 +19,7 @@ export const fcWebProjectRepository = {
         return FCWebProject.paginate({}, {
             page,
             limit,
-            sort: { createdAt: -1 }
+            sort: { createdAt: 1 }
         });
     },
 

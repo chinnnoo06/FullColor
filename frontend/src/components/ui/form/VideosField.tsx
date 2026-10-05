@@ -39,7 +39,7 @@ export const VideosField = ({ videos, onChange, error, max = 5 }: TVideosFieldPr
                 <label
                     htmlFor="videos"
                     aria-disabled={full}
-                    className={`border-secondary/50 text-fourth/75 flex flex-col items-center justify-center gap-2.5 rounded-lg border border-dashed px-5 py-10 text-center text-xs transition-colors duration-300 lg:text-sm ${full
+                    className={`border-secondary/30 text-fourth/75 flex flex-col items-center justify-center gap-2.5 rounded-lg border border-dashed px-5 py-10 text-center text-xs transition-colors duration-300 lg:text-sm ${full
                         ? 'cursor-not-allowed opacity-50'
                         : 'hover:border-secondary cursor-pointer'
                         }`}

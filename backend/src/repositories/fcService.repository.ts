@@ -19,7 +19,7 @@ export const fcServiceRepository = {
         return FCService.paginate(filter, {
             page,
             limit,
-            sort: { _id: -1 },
+            sort: { createdAt: 1 },
             populate: 'category'
         });
     },

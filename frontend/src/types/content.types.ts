@@ -26,14 +26,6 @@ export type TProduct = {
   image: StaticImageData;
 };
 
-/** Servicio que ofrece Full Color. Hoy es data local; en el futuro vendrá del backend. */
-export type TService = {
-  slug: string;
-  title: string;
-  description: string;
-  image: StaticImageData;
-};
-
 export type TContactSocialItem = {
   icon: IconType;
   label: string;

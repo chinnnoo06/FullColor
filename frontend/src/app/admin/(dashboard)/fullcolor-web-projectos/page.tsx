@@ -1,4 +1,4 @@
-import { FCWebProjectsTable } from '@/components/web/table/FCWebProjectsTable';
+import { FCWebProjectsTable } from '@/components/fcWeb/table/FCWebProjectsTable';
 import { LinkButton } from '@/components/ui/buttons/LinkButton'
 import { Pagination } from '@/components/ui/Pagination';
 import { SectionLabel } from '@/components/ui/SectionLabel'

@@ -5,7 +5,7 @@ import { IS_PROD } from "../config/env";
 
 export class AuthController {
 
-    static register = async (req: Request<{}, unknown, TRegisterDto>, res: Response, next: NextFunction) => {
+    static register = async (req: Request<{}, {}, TRegisterDto>, res: Response, next: NextFunction) => {
         if (IS_PROD) {
             return res.status(404).end()
         }
@@ -25,7 +25,7 @@ export class AuthController {
         }
     }
 
-    static login = async (req: Request<{}, unknown, TLoginDto>, res: Response, next: NextFunction) => {
+    static login = async (req: Request<{}, {}, TLoginDto>, res: Response, next: NextFunction) => {
         const params = req.body;
 
         try {

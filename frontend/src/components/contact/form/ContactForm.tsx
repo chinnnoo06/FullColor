@@ -1,5 +1,6 @@
 'use client'
 
+import { useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ContactFormSchema, TContactForm } from '@/schemas/contact/contact.form.schemas'
@@ -14,9 +15,13 @@ import { SpanError } from '@/components/ui/form/SpanError'
 import { Button } from '@/components/ui/buttons/Button'
 
 export const ContactForm = () => {
+    const searchParams = useSearchParams()
+    const defaultLine = (searchParams.get('line') ?? '') as TContactForm['line']
+    const defaultSubject = searchParams.get('subject') ?? ''
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm<TContactForm>({
         resolver: zodResolver(ContactFormSchema),
-        defaultValues: { name: '', subject: '', details: '', line: '' as TContactForm['line'] },
+        defaultValues: { name: '', subject: defaultSubject, details: '', line: defaultLine },
     })
 
     const onSubmit = (data: TContactForm) => {

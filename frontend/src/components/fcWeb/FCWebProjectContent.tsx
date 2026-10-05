@@ -6,8 +6,8 @@ const PROSE = [
     '[&_ul]:list-disc [&_ol]:list-decimal [&_ul]:pl-5 [&_ol]:pl-5 [&_li]:mb-2.5',
     '[&_blockquote]:border-primary [&_blockquote]:border-l-4 [&_blockquote]:pl-5 [&_blockquote]:text-primary [&_blockquote]:font-medium',
     '[&_img]:rounded-xl [&_img]:w-full [&_img]:aspect-4/3 [&_img]:object-cover [&_img]:max-h-[440px]',
-    '[&_hr]:border-fourth/15',
-    '[&_table]:w-full [&_table]:text-sm [&_th]:text-left [&_th]:text-fourth [&_th]:font-semibold [&_th]:border-b [&_th]:border-fourth/15 [&_th]:p-2.5 [&_td]:border-b [&_td]:border-fourth/15 [&_td]:p-2.5',
+    '[&_hr]:border-fourth/30',
+    '[&_table]:w-full [&_table]:text-sm [&_th]:text-left [&_th]:text-fourth [&_th]:font-semibold [&_th]:border-b [&_th]:border-fourth/30 [&_th]:p-2.5 [&_td]:border-b [&_td]:border-fourth/30 [&_td]:p-2.5',
 ].join(' ')
 
 export const FCWebProjectContent = ({ html }: { html: string }) => {

@@ -9,7 +9,7 @@ const FCWebProjectEditor = dynamic(
     {
         ssr: false,
         loading: () => (
-            <div aria-busy="true" className="border-secondary/50 h-100 w-full animate-pulse rounded-lg border bg-white" />
+            <div aria-busy="true" className="border-secondary/30 h-100 w-full animate-pulse rounded-lg border bg-white" />
         ),
     }
 );

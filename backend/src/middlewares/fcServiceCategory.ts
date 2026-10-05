@@ -19,6 +19,26 @@ export const validateFCServiceCategoryInput = async (req: Request, res: Response
     next()
 }
 
+export const validateFCServiceCategorySlugQuery = async (req: Request, res: Response, next: NextFunction) => {
+    const slug = req.query.category as string | undefined
+
+    if (!slug) return next()
+
+    try {
+        const fcServiceCategory = await fcServiceCategoryRepository.findBySlug(slug)
+
+        if (!fcServiceCategory) {
+            throw new HttpError(404, "Category not found")
+        }
+
+        req.FCServiceCategory = fcServiceCategory
+
+        next()
+    } catch (error) {
+        next(error)
+    }
+}
+
 export const validateFCServiceCategoryExists = async (req: Request<TMongoIdParams>, res: Response, next: NextFunction) => {
     const { id } = req.params
 

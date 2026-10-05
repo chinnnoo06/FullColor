@@ -22,7 +22,7 @@ export const ImagesCell = ({ images, name, baseUrl }: TImagesCellProps) => {
     const next = () => setIndex((i) => (i === images.length - 1 ? 0 : i + 1));
 
     return (
-        <div className="flex items-center gap-2.5">
+        <div className="flex min-w-45 items-center gap-2.5">
             {many && (
                 <button type="button" onClick={prev} aria-label={`Imagen anterior de ${name}`} className={ARROW}>
                     <FiChevronLeft aria-hidden="true" className="size-4 lg:size-4.5" />

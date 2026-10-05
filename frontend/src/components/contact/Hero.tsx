@@ -3,7 +3,7 @@ import { fadeUp } from '@/utils/motion/reveal'
 
 export const Hero = () => {
     return (
-        <section data-section="contact-hero" className="bg-thrird py-15 lg:py-20 flex flex-col gap-15 lg:gap-20">
+        <section id="contact-hero" data-section="contact-hero" className="bg-thrird py-15 lg:py-20 flex flex-col gap-15 lg:gap-20">
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <RevealOnLoad variants={fadeUp} className="flex flex-col items-center justify-center text-center gap-5 w-full ">
                     <h1 className="font-barlow text-fourth text-[2.5rem] small:text-[2.75rem] md:text-[3rem] lg:text-[4rem] xl:text-[4.5rem] 2xl:text-[5rem] leading-[1.05] font-bold tracking-[-0.02em] uppercase text-balance ">

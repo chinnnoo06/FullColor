@@ -20,7 +20,7 @@ export const Process = () => {
     const inView = useInView(listRef, { once: true, amount: 0.1 })
 
     return (
-        <section data-section="contact-process" className="relative bg-fourth py-15 lg:py-20">
+        <section id="contact-process" data-section="contact-process" className="relative bg-fourth py-15 lg:py-20">
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-15">
 

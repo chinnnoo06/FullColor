@@ -4,6 +4,7 @@ import { handleInputErrors, validateImagesFormat } from "../middlewares/reqValid
 import { FCServiceController } from "../controllers/fcService.controller";
 import { fcServicesUploads } from "../middlewares/uploads";
 import { validateFCServiceInput, validateFCServiceExists } from "../middlewares/fcService";
+import { validateFCServiceCategorySlugQuery } from "../middlewares/fcServiceCategory";
 import { converToWebP } from "../middlewares/convertToWebp";
 import { query } from "express-validator";
 
@@ -11,8 +12,9 @@ const router: Router = Router();
 
 router.get("/",
     query('page').optional().isInt({ min: 1 }).withMessage('Page must be an integer greater than 0'),
-    query('category').optional().isMongoId().withMessage('Invalid category id'),
+    query('category').optional().isString().withMessage('Invalid category slug'),
     handleInputErrors,
+    validateFCServiceCategorySlugQuery,
     FCServiceController.getFCServices
 )
 

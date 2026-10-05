@@ -39,7 +39,7 @@ export const ImagesField = ({ images, onChange, error, max = 5, title }: TImages
                 <label
                     htmlFor="images"
                     aria-disabled={full}
-                    className={`border-primary/50 text-fourth/75 flex flex-col items-center justify-center gap-2.5 rounded-lg border border-dashed px-5 py-10 text-center text-xs transition-colors duration-300 lg:text-sm ${full
+                    className={`border-primary/30 text-fourth/75 flex flex-col items-center justify-center gap-2.5 rounded-lg border border-dashed px-5 py-10 text-center text-xs transition-colors duration-300 lg:text-sm ${full
                         ? 'cursor-not-allowed opacity-50'
                         : 'hover:border-primary cursor-pointer'
                         }`}

@@ -16,7 +16,7 @@ export const fcServiceCategoryRepository = {
     },
 
     async findAll() {
-        return FCServiceCategory.find().sort({ name: 1 })
+        return FCServiceCategory.find().sort({ createdAt: 1 })
     },
 
 }

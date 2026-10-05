@@ -25,7 +25,7 @@ export class FCWebProjectController {
         }
     }
 
-    static updateFCWebProject = async (req: TRequestWithFCWebProject<{}, unknown, TFCWebProjectDto>, res: Response, next: NextFunction) => {
+    static updateFCWebProject = async (req: TRequestWithFCWebProject<{}, {}, TFCWebProjectDto>, res: Response, next: NextFunction) => {
         const data = req.body;
 
         try {

@@ -34,7 +34,7 @@ export const TechnologiesField = ({ value, onChange, error }: TTechnologiesField
                             type="button"
                             onClick={() => toggle(tech)}
                             aria-pressed={selected}
-                            className={`flex items-center gap-2.5 rounded-lg border px-5 py-2.5 text-sm lg:text-base font-medium transition-colors duration-300 cursor-pointer ${
+                            className={`flex items-center gap-2.5 rounded-lg border px-5 py-2.5 text-sm lg:text-base font-barlow transition-colors duration-300 cursor-pointer ${
                                 selected
                                     ? 'border-primary  text-primary'
                                     : 'border-fourth/30 text-fourth/75 hover:border-secondary hover:text-secondary'

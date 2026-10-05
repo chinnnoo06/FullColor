@@ -81,8 +81,8 @@ export const fcServiceService = {
         return fcServiceRepository.findByIdPopulated(id)
     },
 
-    async getFCServices(page: number, category?: string) {
-        const filter = category ? { category } : {}
+    async getFCServices(page: number, categoryId?: string) {
+        const filter = categoryId ? { category: categoryId } : {}
         const result = await fcServiceRepository.findPaginated(page, FC_SERVICES_PER_PAGE, filter)
 
         return {

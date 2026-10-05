@@ -6,7 +6,7 @@ import { TRequestWithFCService } from "../types/express/fcService";
 
 export class FCServiceController {
 
-    static createFCService = async (req: TRequestWithFCService<{}, unknown, TFCServiceDto>, res: Response, next: NextFunction) => {
+    static createFCService = async (req: Request<{}, {}, TFCServiceDto>, res: Response, next: NextFunction) => {
         const data = req.body;
         const files = req.files as TMulterFiles;
 
@@ -24,7 +24,7 @@ export class FCServiceController {
         }
     }
 
-    static updateFCService = async (req: TRequestWithFCService<{}, unknown, TFCServiceDto>, res: Response, next: NextFunction) => {
+    static updateFCService = async (req: TRequestWithFCService<{}, {}, TFCServiceDto>, res: Response, next: NextFunction) => {
         const data = req.body;
 
         try {
@@ -88,10 +88,10 @@ export class FCServiceController {
 
     static getFCServices = async (req: Request<{}, {}, {}, TGetFCServicesQuery>, res: Response, next: NextFunction) => {
         const page = Number(req.query.page ?? 1)
-        const category = req.query.category
+        const categoryId = req.FCServiceCategory?._id.toString()
 
         try {
-            const { fcServices, pagination } = await fcServiceService.getFCServices(page, category)
+            const { fcServices, pagination } = await fcServiceService.getFCServices(page, categoryId)
 
             return res.status(200).json({
                 status: "success",

@@ -7,7 +7,7 @@ import { TPaginationQuery } from "../types/common/common.dtos";
 
 export class FCDepotProductController {
 
-    static createFCDepotProduct = async (req: TRequestWithFCDepotProduct<{}, unknown, TFCDepotProductDto>, res: Response, next: NextFunction) => {
+    static createFCDepotProduct = async (req: Request<{}, {}, TFCDepotProductDto>, res: Response, next: NextFunction) => {
         const data = req.body;
         const files = req.files as TMulterFiles;
 
@@ -25,7 +25,7 @@ export class FCDepotProductController {
         }
     }
 
-    static updateFCDepotProduct = async (req: TRequestWithFCDepotProduct<{}, unknown, TFCDepotProductDto>, res: Response, next: NextFunction) => {
+    static updateFCDepotProduct = async (req: TRequestWithFCDepotProduct<{}, {}, TFCDepotProductDto>, res: Response, next: NextFunction) => {
         const data = req.body;
 
         try {

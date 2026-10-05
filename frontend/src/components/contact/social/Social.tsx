@@ -7,7 +7,7 @@ import { CONTACT_SOCIAL_ITEMS } from '@/utils/data/contact'
 
 export const Social = () => {
     return (
-        <section data-section="contact-social" className="bg-thrird py-15 lg:py-20">
+        <section id="contact-social" data-section="contact-social" className="bg-thrird py-15 lg:py-20">
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-15">
 

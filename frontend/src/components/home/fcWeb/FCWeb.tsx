@@ -12,11 +12,11 @@ import { SectionCurve } from '@/components/ui/SectionCurve'
 import { BulletHex } from '@/components/ui/BulletHex'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 
-export const Web = () => {
+export const FCWeb = () => {
     const { reduced, outerRef, viewportRef, trackRef, x, progress, distance, top } = useHorizontalScroll()
 
     return (
-        <section id="web" data-section="home-web" className="relative bg-fourth py-15 lg:py-20">
+        <section id="home-web" data-section="home-web" className="relative bg-fourth py-15 lg:py-20">
             <SectionCurve fill="fill-thrird" />
             <div className="flex flex-col gap-10 lg:gap-15">
                 <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">

@@ -3,47 +3,47 @@
 import { Button } from "@/components/ui/buttons/Button"
 import { FormSection } from "@/components/ui/form/FormSection"
 import { FormSectionTitle } from "@/components/ui/form/FormSectionTitle"
+import { ImagesField } from "@/components/ui/form/ImagesField"
 import { Input } from "@/components/ui/form/Input"
 import { Label } from "@/components/ui/form/Label"
 import { SpanError } from "@/components/ui/form/SpanError"
 import { Textarea } from "@/components/ui/form/Textarea"
 import { useFCDepotProduct } from "@/hooks/useFCDepotProduct"
-import { TUpdateFCDepotProductForm, UpdateFCDepotProductFormSchema } from "@/schemas/fcDepotProduct/fcDepotProduct.form.schemas"
-import { TFCDepotProduct } from "@/schemas/fcDepotProduct/fcDepotProduct.schemas"
+import { CreateFCDepotProductFormSchema, TCreateFCDepotProductForm } from "@/schemas/fcDepotProduct/fcDepotProduct.form.schemas"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useEffect } from "react"
 import { useFieldArray, useForm, useWatch } from "react-hook-form"
 import { toast } from "react-toastify"
 import { HiPlus, HiTrash } from "react-icons/hi2"
 
-export const EditFCDepotProductForm = ({ fcDepotProduct }: { fcDepotProduct: TFCDepotProduct }) => {
-    const { register, control, handleSubmit, formState: { errors } } = useForm<TUpdateFCDepotProductForm>({
-        resolver: zodResolver(UpdateFCDepotProductFormSchema),
+export const CreateFCDepotProductForm = () => {
+    const { register, control, handleSubmit, setValue, formState: { errors } } = useForm<TCreateFCDepotProductForm>({
+        resolver: zodResolver(CreateFCDepotProductFormSchema),
         defaultValues: {
-            name: fcDepotProduct.name,
-            description: fcDepotProduct.description,
-            colors: fcDepotProduct.colors,
-            retailPrice: fcDepotProduct.retailPrice,
-            midWholesalePrice: fcDepotProduct.midWholesalePrice,
-            wholesalePrice: fcDepotProduct.wholesalePrice,
-            seo: {
-                metaTitle: fcDepotProduct.seo.metaTitle,
-                metaDescription: fcDepotProduct.seo.metaDescription,
-            },
+            name: '',
+            description: '',
+            colors: [{ name: '', hex: '' }],
+            retailPrice: '' as unknown as number,
+            midWholesalePrice: null,
+            wholesalePrice: null,
+            seo: { metaTitle: '', metaDescription: '' },
+            images: [],
         }
     })
 
     const { fields, append, remove } = useFieldArray({ control, name: 'colors' })
-    const colors = useWatch({ control, name: 'colors' })
 
-    const { updateFCDepotProduct } = useFCDepotProduct()
+    const { createFCDepotProduct } = useFCDepotProduct()
 
     useEffect(() => {
-        if (updateFCDepotProduct.error) toast.error(updateFCDepotProduct.error)
-        if (updateFCDepotProduct.success) toast.success(updateFCDepotProduct.success)
-    }, [updateFCDepotProduct.error, updateFCDepotProduct.success])
+        if (createFCDepotProduct.error) toast.error(createFCDepotProduct.error)
+        if (createFCDepotProduct.success) toast.success(createFCDepotProduct.success)
+    }, [createFCDepotProduct.error, createFCDepotProduct.success])
 
-    const onSubmit = (data: TUpdateFCDepotProductForm) => updateFCDepotProduct.handleUpdateFCDepotProduct(fcDepotProduct._id, data)
+    const images = useWatch({ control, name: 'images' })
+    const colors = useWatch({ control, name: 'colors' })
+
+    const onSubmit = (data: TCreateFCDepotProductForm) => createFCDepotProduct.handleCreateFCDepotProduct(data)
 
     return (
         <form className='space-y-5' onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -89,7 +89,7 @@ export const EditFCDepotProductForm = ({ fcDepotProduct }: { fcDepotProduct: TFC
                                         placeholder="#FF0000"
                                         {...register(`colors.${index}.hex`)}
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 size-4 lg:size-4.5 shrink-0 rounded-full border-white/10" style={{ backgroundColor: colors?.[index]?.hex || 'transparent' }} />
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 size-4 lg:size-4.5 shrink-0 rounded-full border-white/30" style={{ backgroundColor: colors[index]?.hex || 'transparent' }} />
                                 </div>
                                 <SpanError message={errors.colors?.[index]?.hex?.message} />
                             </div>
@@ -120,6 +120,7 @@ export const EditFCDepotProductForm = ({ fcDepotProduct }: { fcDepotProduct: TFC
                         Agregar color
                     </button>
                 </div>
+
             </FormSection>
 
             <FormSection>
@@ -160,8 +161,19 @@ export const EditFCDepotProductForm = ({ fcDepotProduct }: { fcDepotProduct: TFC
                 </div>
             </FormSection>
 
-            <Button type="submit" width="responsive" loading={updateFCDepotProduct.loading} loadingText="Cargando...">
-                Guardar Cambios
+            <FormSection>
+                <FormSectionTitle>Imágenes</FormSectionTitle>
+
+                <ImagesField
+                    images={images}
+                    onChange={(next) => setValue('images', next, { shouldValidate: true })}
+                    error={errors.images?.message}
+                    title="Imágenes del producto"
+                />
+            </FormSection>
+
+            <Button type="submit" width="responsive" loading={createFCDepotProduct.loading} loadingText="Cargando...">
+                Crear Producto
             </Button>
         </form>
     )

@@ -1,9 +1,9 @@
-import { FCServicesTable } from '@/components/services/table/FCServicesTable';
+﻿import { FCServicesTable } from '@/components/fcServices/table/FCServicesTable';
 import { LinkButton } from '@/components/ui/buttons/LinkButton'
 import { Pagination } from '@/components/ui/Pagination';
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { SectionTitle } from '@/components/ui/SectionTitle'
-import { getFCServicesService } from '@/services/server/fcServices.service';
+import { getFCServicesService } from '@/services/server/fcService.service';
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation';
 

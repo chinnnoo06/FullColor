@@ -1,5 +1,5 @@
-import { getFCServiceService } from "@/services/server/fcServices.service";
-import { EditFCServiceImagesForm } from "@/components/services/form/images/EditFCServiceImagesForm";
+import { getFCServiceService } from "@/services/server/fcService.service";
+import { EditFCServiceImagesForm } from "@/components/fcServices/form/images/EditFCServiceImagesForm";
 import { BackButton } from "@/components/ui/buttons/BackButton";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";
