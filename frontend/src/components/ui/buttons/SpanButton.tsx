@@ -12,7 +12,6 @@ export const SpanButton = ({ children, variant = 'primary', width = 'full' }: TS
     return (
         <span className={`${BUTTON_BASE} ${BUTTON_WIDTH[width]} ${BUTTON_VARIANT_STATIC[variant]}`}>
             {children}
-            <HiArrowUpRight aria-hidden="true" className={BUTTON_ICON} />
         </span>
     )
 }

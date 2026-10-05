@@ -11,15 +11,13 @@ type TFCDepotProductCardProps = {
     page: number
 }
 
-const MAX_COLORS = 8
+const MAX_COLORS = 5
 
 const formatPrice = (price: number) =>
     new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(price)
 
 export const FCDepotProductCard = ({ fcDepotProduct, page }: TFCDepotProductCardProps) => {
     const image = fcDepotProduct.images[0]
-    const visibleColors = fcDepotProduct.colors.slice(0, MAX_COLORS)
-    const extraColors = fcDepotProduct.colors.length - MAX_COLORS
 
     return (
         <Link
@@ -28,7 +26,7 @@ export const FCDepotProductCard = ({ fcDepotProduct, page }: TFCDepotProductCard
             onClick={() => saveDepotOrigin({ page, productId: fcDepotProduct._id })}
             className="group border-fourth/30 hover:border-primary/30 flex flex-col overflow-hidden rounded-xl border transition-colors duration-300"
         >
-            <div className="relative aspect-3/4 w-full overflow-hidden bg-fourth/5">
+            <div className="relative aspect-4/5 w-full overflow-hidden bg-fourth/5">
                 {image && (
                     <Image
                         src={`${process.env.NEXT_PUBLIC_FC_DEPOT_PRODUCTS_IMAGE_URL}/${image}`}
@@ -39,36 +37,31 @@ export const FCDepotProductCard = ({ fcDepotProduct, page }: TFCDepotProductCard
                     />
                 )}
 
-                <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                <div className="absolute inset-5 flex translate-y-2 items-center justify-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                    <SpanButton>Ver más</SpanButton>
-                </div>
-            </div>
-
-            <div className="flex flex-1 flex-col gap-2.5 p-5">
-                <h3 className="font-barlow text-fourth group-hover:text-primary line-clamp-2 text-xl lg:text-2xl font-bold uppercase transition-colors duration-300">
-                    {fcDepotProduct.name}
-                </h3>
-
                 {fcDepotProduct.colors.length > 0 && (
-                    <div className="flex flex-wrap items-center gap-1.5">
-                        {visibleColors.map((color) => (
+                    <div className="absolute flex flex-col gap-1.5 rounded-r-xl bg-black/40 p-1.5 lg:p-2.5 backdrop-blur-sm">
+                        {fcDepotProduct.colors.slice(0, MAX_COLORS).map((color) => (
                             <span
                                 key={color.hex}
                                 title={color.name}
                                 aria-label={color.name}
-                                className="size-4 shrink-0 rounded-full border border-fourth/30 lg:size-4.5"
+                                className="size-4 rounded-full border border-fourth/30 shadow-sm lg:size-4.5"
                                 style={{ backgroundColor: color.hex }}
                             />
                         ))}
-                        {extraColors > 0 && (
-                            <span className="font-barlow text-fourth/75 text-xs lg:text-sm">
-                                +{extraColors}
-                            </span>
-                        )}
                     </div>
                 )}
+
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                <div className="absolute inset-2.5 lg:inset-5 flex translate-y-2 items-center justify-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    <SpanButton width='full'>Ver más</SpanButton>
+                </div>
+            </div>
+
+            <div className="flex flex-1 flex-col gap-2.5 p-2.5 lg:p-5">
+                <h3 className="font-barlow text-fourth group-hover:text-primary line-clamp-2 text-xl lg:text-2xl font-bold uppercase transition-colors duration-300">
+                    {fcDepotProduct.name}
+                </h3>
 
                 <p className="font-barlow text-primary mt-auto text-lg font-semibold lg:text-xl">
                     {formatPrice(fcDepotProduct.retailPrice)} MXN

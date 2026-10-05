@@ -45,12 +45,12 @@ export const PublicPagination = ({ pagination, basePath, anchor }: TPublicPagina
                 {hasPrevPage ? (
                     <Link href={href(page - 1)} className={NAV_ACTIVE}>
                         <FiChevronLeft aria-hidden="true" className="size-4 lg:size-4.5" />
-                        Anterior
+                        <span className="hidden sm:inline">Anterior</span>
                     </Link>
                 ) : (
                     <span aria-disabled="true" className={NAV_DISABLED}>
                         <FiChevronLeft aria-hidden="true" className="size-4 lg:size-4.5" />
-                        Anterior
+                        <span className="hidden sm:inline">Anterior</span>
                     </span>
                 )}
 
@@ -76,12 +76,12 @@ export const PublicPagination = ({ pagination, basePath, anchor }: TPublicPagina
 
                 {hasNextPage ? (
                     <Link href={href(page + 1)} className={NAV_ACTIVE}>
-                        Siguiente
+                        <span className="hidden sm:inline">Siguiente</span>
                         <FiChevronRight aria-hidden="true" className="size-4 lg:size-4.5" />
                     </Link>
                 ) : (
                     <span aria-disabled="true" className={NAV_DISABLED}>
-                        Siguiente
+                        <span className="hidden sm:inline">Siguiente</span>
                         <FiChevronRight aria-hidden="true" className="size-4 lg:size-4.5" />
                     </span>
                 )}
