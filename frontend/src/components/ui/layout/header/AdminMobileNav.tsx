@@ -76,7 +76,7 @@ export const AdminMobileNav = ({ menuVisible, toggleMenu }: TAdminMobileNavProps
                         style={{ transitionDelay: menuVisible ? `${150 + ADMIN_LINKS.length * 50}ms` : '0ms' }}
                         className={`mt-auto pt-10 transition-all duration-500 ${menuVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                     >
-                        <LogoutButton className="border-fourth/30 flex w-full items-center gap-5 border-t py-5 font-barlow text-xl font-medium uppercase transition-colors duration-300 hover:bg-red-600/10" />
+                        <LogoutButton />
                     </div>
                 </div>
             </aside>
