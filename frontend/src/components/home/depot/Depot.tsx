@@ -66,9 +66,9 @@ export const Depot = () => {
                         </p>
 
                         <div className="flex w-full flex-col gap-5 small:flex-row small:flex-wrap small:items-center">
-                            <LinkButton href="/depot" width="responsive">Ver catálogo</LinkButton>
+                            <LinkButton href="/depot" width="responsive">Ver Catálogo</LinkButton>
 
-                            <LinkButton href="/contacto" variant="secondary" width="responsive">Pedir cotización</LinkButton>
+                            <LinkButton href="/contacto" variant="secondary" width="responsive">Pedir Cotización</LinkButton>
                         </div>
                     </Reveal>
 

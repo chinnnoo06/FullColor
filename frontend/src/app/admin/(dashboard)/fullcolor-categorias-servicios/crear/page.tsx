@@ -1,4 +1,4 @@
-import { CreateFCServiceCategoryForm } from '@/components/fcServices/categories/form/CreateFCServiceCategoryForm'
+import { CreateFCServiceCategoryForm } from '@/components/services/categories/form/CreateFCServiceCategoryForm'
 import { BackButton } from '@/components/ui/buttons/BackButton'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { SectionTitle } from '@/components/ui/SectionTitle'

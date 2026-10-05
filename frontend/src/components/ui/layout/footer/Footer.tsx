@@ -12,7 +12,7 @@ const CONTACT_LINKS = [
 ] as const
 
 const LINK_CLASS =
-  'text-fourth/75 hover:text-secondary inline-flex items-center gap-2.5 text-sm transition-colors duration-300 lg:text-base'
+  'text-fourth/75 hover:text-secondary inline-flex items-center gap-2.5 text-base transition-colors duration-300 lg:text-lg'
 
 export const Footer = () => {
   const year = new Date().getFullYear()
@@ -22,7 +22,7 @@ export const Footer = () => {
       <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15 py-15 lg:py-20">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-15">
 
-          <div className="flex w-full flex-col gap-5 lg:w-[30%]">
+          <div className="flex w-full flex-col gap-5 items-center text-center lg:items-start lg:text-start lg:w-[30%]">
             <Link href="/" aria-label="Ir al inicio" className="w-15 lg:w-20">
               <Logo sizes="80px" />
             </Link>
@@ -39,8 +39,8 @@ export const Footer = () => {
             <SocialButtons />
           </div>
 
-          <div className="w-full grid grid-cols-2 lg:grid-cols-3 lg:w-[70%] lg:justify-end ">
-            <nav aria-label="Navegación del pie" className="flex flex-col gap-5">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:w-[70%] lg:justify-end gap-10 lg:gap-15">
+            <nav aria-label="Navegación del pie" className="flex flex-col items-center text-center lg:items-start lg:text-start gap-5">
               <SectionLabel>Navegacion</SectionLabel>
               <ul role="list" className="flex flex-col gap-2.5">
                 {NAV_LINKS.map((link) => (
@@ -53,7 +53,7 @@ export const Footer = () => {
               </ul>
             </nav>
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-start gap-5">
               <SectionLabel>Contacto</SectionLabel>
               <ul role="list" className="flex flex-col gap-2.5">
                 {CONTACT_LINKS.map((item) => (
@@ -72,7 +72,7 @@ export const Footer = () => {
               </ul>
             </div>
 
-            <nav aria-label="Legal" className="flex flex-col gap-5">
+            <nav aria-label="Legal" className="flex flex-col items-center text-center lg:items-start lg:text-start gap-5">
               <SectionLabel>Legal</SectionLabel>
               <ul role="list" className="flex flex-col gap-2.5">
                 {LEGAL_LINKS.map((link) => (
@@ -88,7 +88,7 @@ export const Footer = () => {
 
         </div>
 
-        <div className="border-fourth/30 mt-15 flex flex-col gap-2.5 border-t pt-5 text-xs sm:flex-row sm:items-center sm:justify-between lg:mt-20 lg:text-sm">
+        <div className="border-fourth/30 mt-15 flex flex-col gap-2.5 border-t pt-5 text-sm sm:flex-row sm:items-center sm:justify-between lg:mt-20 lg:text-base">
           <p className="text-fourth/75">
             © {year} FullColor. Todos los derechos reservados.
           </p>

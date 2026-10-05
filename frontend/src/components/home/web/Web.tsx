@@ -46,9 +46,9 @@ export const Web = () => {
                         </ul>
 
                         <div className="flex w-full flex-col gap-5 small:flex-row small:flex-wrap small:items-center">
-                            <LinkButton href="/web" width="responsive">Conocer más</LinkButton>
+                            <LinkButton href="/web" width="responsive">Conocer Más</LinkButton>
 
-                            <LinkButton href="/contacto" variant="secondary" width="responsive">Cotizar mi web</LinkButton>
+                            <LinkButton href="/contacto" variant="secondary" width="responsive">Cotizar Mi Web</LinkButton>
                         </div>
                     </Reveal>
                 </div>
@@ -71,11 +71,8 @@ export const Web = () => {
 
                         <div aria-hidden="true" style={{ height: distance }} />
                     </Reveal>
-
                 </div>
-
             </div>
-
         </section>
     )
 }

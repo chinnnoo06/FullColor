@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { TService } from '@/types/content.types'
 import { stackCardRange, stackCardScaleAt, stackCardTop, type TStackRange } from '@/utils/motion/stack'
+import { staggerItem } from '@/utils/motion/reveal'
 
 export type TServiceCardRef = RefObject<HTMLLIElement | null>
 
@@ -37,11 +38,12 @@ export const ServiceCard = ({ service, index, cardRef, nextRef }: TServiceCardPr
     return (
         <motion.li
             ref={cardRef}
+            variants={staggerItem}
             style={{ top: stackCardTop(index), scale: reduced ? 1 : scale }}
             className="sticky origin-top"
         >
             <div className="bg-thrird flex flex-col sm:flex-row sm:items-stretch lg:flex-col xl:flex-row xl:items-stretch overflow-hidden rounded-xl shadow-lg ">
-                <span className="relative h-50 w-full sm:w-90 sm:h-65 lg:w-full lg:h-50 xl:w-90 xl:h-65 shrink-0 sm:order-2 lg:order-1 xl:order-2">
+                <div className="relative h-50 w-full sm:w-90 sm:h-65 lg:w-full lg:h-50 xl:w-90 xl:h-65 shrink-0 sm:order-2 lg:order-1 xl:order-2">
                     <Image
                         src={service.image}
                         alt=""
@@ -49,7 +51,7 @@ export const ServiceCard = ({ service, index, cardRef, nextRef }: TServiceCardPr
                         sizes="(min-width: 1024px) 260px, 100vw"
                         className="object-cover object-center"
                     />
-                </span>
+                </div>
 
                 <div className="flex flex-1 items-stretch sm:order-1 lg:order-2 xl:order-1">
                     <span className="bg-primary w-1 shrink-0" />

@@ -1,6 +1,7 @@
 import type { StaticImageData } from 'next/image'
 import { Marquee } from '@/components/ui/Marquee'
 import { Banner } from './Banner'
+import { BulletHex } from '../ui/BulletHex'
 
 type TMarqueeBannerProps = {
   image: StaticImageData
@@ -28,7 +29,7 @@ export const MarqueeBanner = ({  image, imageClassName }: TMarqueeBannerProps) =
             className="font-barlow flex items-center gap-5 text-sm font-semibold tracking-[0.15em] whitespace-nowrap uppercase lg:text-base"
           >
             {item}
-            <span className={`bg-thrird size-2 shrink-0 ${HEX_BULLET}`} />
+            <BulletHex className='fill-thrird'/>
           </span>
         ))}
       </Marquee>

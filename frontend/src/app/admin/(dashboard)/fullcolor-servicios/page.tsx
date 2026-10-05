@@ -1,4 +1,4 @@
-import { FCServicesTable } from '@/components/fcServices/table/FCServicesTable';
+import { FCServicesTable } from '@/components/services/table/FCServicesTable';
 import { LinkButton } from '@/components/ui/buttons/LinkButton'
 import { Pagination } from '@/components/ui/Pagination';
 import { SectionLabel } from '@/components/ui/SectionLabel'

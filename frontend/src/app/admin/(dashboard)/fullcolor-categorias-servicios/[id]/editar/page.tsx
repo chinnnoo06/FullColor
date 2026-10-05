@@ -1,5 +1,5 @@
 import { getFCServiceCategoryService } from "@/services/server/fcServiceCategory.service"
-import { EditFCServiceCategoryForm } from "@/components/fcServices/categories/form/EditFCServiceCategoryForm"
+import { EditFCServiceCategoryForm } from "@/components/services/categories/form/EditFCServiceCategoryForm"
 import { BackButton } from "@/components/ui/buttons/BackButton"
 import { SectionLabel } from "@/components/ui/SectionLabel"
 import { SectionTitle } from "@/components/ui/SectionTitle"

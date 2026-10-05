@@ -6,7 +6,7 @@ import { Web } from '@/components/home/web/Web'
 import { Cta } from '@/components/sections/Cta'
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
-import { Contact } from '@/components/home/contact/Contact'
+import { ContactSection } from '@/components/contact/ContactSection'
 
 export default function page() {
   return (
@@ -18,7 +18,7 @@ export default function page() {
       <Depot />
       <Web />
       <Cta />
-      <Contact/>
+      <ContactSection id="contacto" dataSection="home-contact" showMoreLink />
     </>
   )
 }

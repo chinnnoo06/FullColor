@@ -54,5 +54,5 @@ export const login = async (data: TLoginForm): Promise<TActionState | undefined>
         maxAge: 60 * 60 * 24
     })
 
-    redirect('/admin/fullcolor-servicios')
+    redirect('/admin/fullcolor-categorias-servicios')
 }

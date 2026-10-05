@@ -1,4 +1,4 @@
-import { CreateFCServiceForm } from '@/components/fcServices/form/CreateFCServiceForm'
+import { CreateFCServiceForm } from '@/components/services/form/CreateFCServiceForm'
 import { BackButton } from '@/components/ui/buttons/BackButton'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { SectionTitle } from '@/components/ui/SectionTitle'

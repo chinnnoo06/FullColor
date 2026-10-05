@@ -1,4 +1,4 @@
-import { CreateFCWebProjectForm } from "@/components/fcWeb/form/CreateFCWebProjectForm";
+import { CreateFCWebProjectForm } from "@/components/web/form/CreateFCWebProjectForm";
 import { BackButton } from "@/components/ui/buttons/BackButton";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";

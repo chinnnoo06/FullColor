@@ -35,9 +35,9 @@ export const Cta = () => {
                         </p>
 
                         <div className="flex w-full flex-col gap-5 small:flex-row small:flex-wrap small:items-center">
-                            <LinkButton href={CONTACT.whatsapp.url} width="responsive">Cotizar por WhatsApp</LinkButton>
+                            <LinkButton href={CONTACT.whatsapp.url} width="responsive">Cotizar Por WhatsApp</LinkButton>
 
-                            <LinkButton href="/contacto" variant="secondary" width="responsive">Ir a contacto</LinkButton>
+                            <LinkButton href="/contacto" variant="secondary" width="responsive">Ir A Contacto</LinkButton>
                         </div>
                     </div>
                 </div>

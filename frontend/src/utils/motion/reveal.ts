@@ -20,3 +20,8 @@ export const staggerParent = (stagger = 0.12, delayChildren = 0): Variants => ({
   hidden: {},
   show: { transition: { staggerChildren: stagger, delayChildren } },
 });
+
+export const staggerItem: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE_BRAND } },
+};

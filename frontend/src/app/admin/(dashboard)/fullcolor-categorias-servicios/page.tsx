@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { LinkButton } from '@/components/ui/buttons/LinkButton'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { SectionTitle } from '@/components/ui/SectionTitle'
-import { FCServiceCategoriesTable } from '@/components/fcServices/categories/table/FCServiceCategoriesTable'
+import { FCServiceCategoriesTable } from '@/components/services/categories/table/FCServiceCategoriesTable'
 import { getFCServiceCategoriesService } from '@/services/server/fcServiceCategory.service'
 
 export const metadata: Metadata = { title: 'Categorías de servicios FC' }

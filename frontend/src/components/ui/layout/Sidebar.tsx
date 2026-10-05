@@ -36,7 +36,7 @@ export const Sidebar = () => {
                     </ul>
                 </nav>
 
-                <LogoutButton className="group mt-auto flex items-center gap-5 px-5 py-5 font-barlow text-base font-medium uppercase transition-colors duration-300 hover:bg-red-600/10" />
+                <LogoutButton />
             </div>
         </aside>
     );

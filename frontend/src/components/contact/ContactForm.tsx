@@ -83,7 +83,7 @@ export const ContactForm = () => {
             </FormSection>
 
             <Button type="submit" width="responsive">
-                Enviar por WhatsApp
+                Enviar Por WhatsApp
             </Button>
         </form>
     )

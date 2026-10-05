@@ -1,5 +1,5 @@
 import { getFCDepotProductByIdService } from "@/services/server/fcDepotProduct.service";
-import { EditFCDepotProductImagesForm } from "@/components/fcDepot/form/images/EditFCDepotProductImagesForm";
+import { EditFCDepotProductImagesForm } from "@/components/depot/form/images/EditFCDepotProductImagesForm";
 import { BackButton } from "@/components/ui/buttons/BackButton";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";

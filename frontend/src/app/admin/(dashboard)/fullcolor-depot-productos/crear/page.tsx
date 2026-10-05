@@ -1,4 +1,4 @@
-import { CreateFCDepotProductForm } from "@/components/fcDepot/form/CreateFCDepotProductForm";
+import { CreateFCDepotProductForm } from "@/components/depot/form/CreateFCDepotProductForm";
 import { BackButton } from "@/components/ui/buttons/BackButton";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";

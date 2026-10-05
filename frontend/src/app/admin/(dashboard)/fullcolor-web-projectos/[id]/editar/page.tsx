@@ -1,5 +1,5 @@
 import { getFCWebProjectByIdService } from "@/services/server/fcWebProject.service";
-import { EditFCWebProjectForm } from "@/components/fcWeb/form/EditFCWebProjectForm";
+import { EditFCWebProjectForm } from "@/components/web/form/EditFCWebProjectForm";
 import { BackButton } from "@/components/ui/buttons/BackButton";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionTitle } from "@/components/ui/SectionTitle";

@@ -1,4 +1,10 @@
 import { WhatsAppLineKeySchema, TWhatsAppLineKey } from '@/schemas/enums.schemas';
+import type { TContactProcessStep, TContactSocialItem, TWhatsAppLineCard } from '@/types/content.types';
+import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa6';
+import ImgPrincipal from '@/assets/media/img5.webp';
+import ImgImpresiones from '@/assets/media/img10.webp';
+import ImgLaserDtf from '@/assets/media/img15.webp';
+import ImgDepotWeb from '@/assets/media/img3.webp';
 
 const WHATSAPP_MESSAGE = 'Hola, me interesa cotizar un proyecto con FullColor.';
 
@@ -46,3 +52,80 @@ export const CONTACT = {
     },
   },
 } as const;
+
+export const CONTACT_SOCIAL_ITEMS: TContactSocialItem[] = [
+  {
+    icon: FaInstagram,
+    label: 'Instagram',
+    handle: '@fullcolorgdl',
+    detail: 'Trabajos, procesos y novedades del taller.',
+    url: CONTACT.social.instagram.url,
+  },
+  {
+    icon: FaFacebookF,
+    label: 'Facebook',
+    handle: 'Fullcolorgdl',
+    detail: 'Promociones, proyectos terminados y más.',
+    url: CONTACT.social.facebook.url,
+  },
+  {
+    icon: FaWhatsapp,
+    label: 'WhatsApp',
+    handle: '33 1273 6524',
+    detail: 'Escríbenos directo y te respondemos rápido.',
+    url: CONTACT.whatsapp.url,
+  },
+];
+
+export const CONTACT_STEPS: TContactProcessStep[] = [
+  {
+    step: '01',
+    title: 'Escríbenos',
+    detail: 'Llena el formulario o contáctanos por WhatsApp en la línea que mejor se adapte a lo que necesitas.',
+  },
+  {
+    step: '02',
+    title: 'Cotizamos',
+    detail: 'Te enviamos una propuesta con precios, tiempos y opciones. Sin compromiso, respondemos rápido.',
+  },
+  {
+    step: '03',
+    title: 'Producimos',
+    detail: 'Aprobada la cotización, comenzamos la producción y te mantenemos informado en cada etapa.',
+  },
+];
+
+export const WHATSAPP_LINE_CARDS: TWhatsAppLineCard[] = [
+  {
+    key: 'principal',
+    label: 'FullColor Principal',
+    display: '33 1273 6524',
+    number: '5213312736524',
+    url: `https://wa.me/5213312736524?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
+    image: ImgPrincipal,
+  },
+  {
+    key: 'impresiones',
+    label: 'FullColor Impresiones',
+    display: '33 1828 8418',
+    number: '5213318288418',
+    url: `https://wa.me/5213318288418?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
+    image: ImgImpresiones,
+  },
+  {
+    key: 'laser-dtf',
+    label: 'FullColor Láser y DTF',
+    display: '33 1414 7664',
+    number: '5213314147664',
+    url: `https://wa.me/5213314147664?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
+    image: ImgLaserDtf,
+  },
+  {
+    key: 'depot-web',
+    label: 'FullColor Depot y Web',
+    display: '33 1300 9184',
+    number: '5213313009184',
+    url: `https://wa.me/5213313009184?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
+    image: ImgDepotWeb,
+  },
+];

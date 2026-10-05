@@ -5,14 +5,7 @@ import ImgBadge from '@/assets/media/img2.webp'
 import { LinkButton } from '../../ui/buttons/LinkButton'
 import { HeroSlider } from './HeroSlider'
 import { BulletHex } from '@/components/ui/BulletHex'
-
-const HERO_SERVICE_LABELS = [
-    'Impresión',
-    'Personalización',
-    'Corte y grabado láser',
-    'Publicidad y displays',
-    'Páginas web',
-] as const
+import { HERO_SERVICE_LABELS } from '@/utils/data/hero'
 
 export const Hero = () => {
     return (
@@ -42,9 +35,9 @@ export const Hero = () => {
                         </ul>
 
                         <div className="flex w-full flex-col gap-5 small:flex-row small:flex-wrap small:items-center">
-                            <LinkButton href="/contacto" width="responsive">Cotiza tu proyecto</LinkButton>
+                            <LinkButton href="/contacto" width="responsive">Cotiza Tu Proyecto</LinkButton>
 
-                            <LinkButton href="/servicios" variant="secondary" width="responsive">Ver servicios</LinkButton>
+                            <LinkButton href="/servicios" variant="secondary" width="responsive">Ver Servicios</LinkButton>
                         </div>
                     </RevealOnLoad>
 

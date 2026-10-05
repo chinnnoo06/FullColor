@@ -36,7 +36,7 @@ export const About = () => {
                             </blockquote>
                         </figure>
 
-                        <LinkButton href="/contacto">Cotiza tu proyecto</LinkButton>
+                        <LinkButton href="/contacto">Cotiza Tu Proyecto</LinkButton>
                     </Reveal>
 
                     <div className="w-full lg:w-[50%] xl:w-[40%]">

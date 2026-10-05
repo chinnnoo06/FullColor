@@ -1,4 +1,4 @@
-import { FCDepotProductsTable } from '@/components/fcDepot/table/FCDepotProductsTable';
+import { FCDepotProductsTable } from '@/components/depot/table/FCDepotProductsTable';
 import { LinkButton } from '@/components/ui/buttons/LinkButton'
 import { Pagination } from '@/components/ui/Pagination';
 import { SectionLabel } from '@/components/ui/SectionLabel'
