@@ -5,21 +5,24 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { getFCServicesService } from '@/services/server/fcService.service';
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
 const BASE_PATH = '/admin/fullcolor-servicios';
 
 export const metadata: Metadata = { title: 'Servicios de FC' }
 
 export default async function AdminFCServicesPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
-    const { page } = await searchParams;
+  const { page } = await searchParams;
 
   const requested = Number(page);
   const current = Number.isInteger(requested) && requested > 0 ? requested : 1;
 
-  const { fcServices, pagination } = await getFCServicesService(current);
 
-  if (pagination.totalPages > 0 && current > pagination.totalPages) {
+  const data = await getFCServicesService(current);
+
+  if (!data) notFound();
+
+  if (data.pagination.totalPages > 0 && current > data.pagination.totalPages) {
     redirect(BASE_PATH);
   }
 
@@ -36,9 +39,9 @@ export default async function AdminFCServicesPage({ searchParams }: { searchPara
         </div>
       </div>
 
-       <FCServicesTable fcServices={fcServices} />
+      <FCServicesTable fcServices={data.fcServices} />
 
-      <Pagination pagination={pagination} basePath={BASE_PATH} />
+      <Pagination pagination={data.pagination} basePath={BASE_PATH} />
     </section>
   )
 }
