@@ -2,6 +2,13 @@ import { model, Schema } from "mongoose";
 import { TFCServiceCategory } from "../types/fcServiceCategory/fcServiceCategory.types";
 
 const FCServiceCategorySchema = new Schema<TFCServiceCategory>({
+    slug: {
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+        trim: true
+    },
     name: {
         type: String,
         required: true,

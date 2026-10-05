@@ -7,6 +7,7 @@ import { TFCServiceCategoryDocument } from "../types/fcServiceCategory/fcService
 import { TFCServiceCategoryDto } from "../types/fcServiceCategory/fcServiceCategory.dtos";
 import { TMulterFiles } from "../types/multer/multer.types";
 import { deleteAllUploadedFiles } from "../utils/deleteFiles";
+import { buildSlug } from "../utils/slug";
 import { UPLOADS_PATH } from "../config/env";
 
 const imagesDir = path.resolve(UPLOADS_PATH, "fcServiceCategories");
@@ -26,13 +27,21 @@ export const fcServiceCategoryService = {
 
     async createFCServiceCategory(data: TFCServiceCategoryDto, files?: TMulterFiles) {
         try {
+            const slug = buildSlug(data.name)
+
+            const slugTaken = await fcServiceCategoryRepository.findBySlug(slug)
+
+            if (slugTaken) {
+                throw new HttpError(409, "A category with that name already exists")
+            }
+
             const image = files?.fcServiceCategoryImage?.[0]?.filename
 
             if (!image) {
                 throw new HttpError(400, "An image is required for the category")
             }
 
-            return await fcServiceCategoryRepository.create({ ...data, image })
+            return await fcServiceCategoryRepository.create({ ...data, slug, image })
         } catch (error) {
             deleteAllUploadedFiles(files)
             throw error
@@ -40,6 +49,18 @@ export const fcServiceCategoryService = {
     },
 
     async updateFCServiceCategory(fcServiceCategory: TFCServiceCategoryDocument, data: TFCServiceCategoryDto) {
+        const slug = buildSlug(data.name)
+
+        if (slug !== fcServiceCategory.slug) {
+            const slugTaken = await fcServiceCategoryRepository.findBySlug(slug)
+
+            if (slugTaken) {
+                throw new HttpError(409, "A category with that name already exists")
+            }
+
+            fcServiceCategory.slug = slug
+        }
+
         fcServiceCategory.name = data.name
         fcServiceCategory.description = data.description
 

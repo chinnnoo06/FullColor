@@ -7,8 +7,15 @@ import { Cta } from '@/components/sections/Cta'
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
 import { ContactSection } from '@/components/contact/ContactSection'
+import { getFCServiceCategoriesService } from '@/services/server/fcServiceCategory.service'
+import { getFCDepotProductsService } from '@/services/server/fcDepotProduct.service'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [fcServiceCategories, { fcDepotProducts }] = await Promise.all([
+    getFCServiceCategoriesService(),
+    getFCDepotProductsService(),
+  ]);
+
   return (
     <>
       <Hero />

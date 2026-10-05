@@ -11,6 +11,10 @@ export const fcServiceCategoryRepository = {
         return FCServiceCategory.findById(id)
     },
 
+    async findBySlug(slug: string) {
+        return FCServiceCategory.findOne({ slug })
+    },
+
     async findAll() {
         return FCServiceCategory.find().sort({ name: 1 })
     },
