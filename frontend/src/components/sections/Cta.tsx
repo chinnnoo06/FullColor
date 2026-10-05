@@ -9,7 +9,7 @@ import ImgCta from '@/assets/media/backgrounds/bg2.webp'
 
 export const Cta = () => {
     return (
-        <section id="home-cta" data-section="home-cta" className="bg-thrird ">
+        <section id="inicio-cta" data-section="inicio-cta" className="bg-thrird ">
             <Reveal variants={fadeBlur} className='flex items-center justify-center min-h-[60svh] lg:min-h-[clamp(640px,100dvh,900px)] relative overflow-hidden py-15 lg:py-20'>
                 <Image
                     src={ImgCta}

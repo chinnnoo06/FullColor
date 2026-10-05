@@ -3,8 +3,6 @@ import { z } from "zod"
 const IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"]
 const IMAGE_MAX_SIZE = 10 * 1024 * 1024
 
-const optionalPrice = z.number({ message: "Debe ser un número válido" }).min(0, { message: "Debe ser mayor o igual a 0" }).nullable()
-
 export const CreateFCDepotProductFormSchema = z.object({
     name: z.string().trim().min(1, { message: "Campo obligatorio" }).max(100, { message: "Máximo 100 caracteres" }),
     description: z.string().trim().min(1, { message: "Campo obligatorio" }).max(500, { message: "Máximo 500 caracteres" }),
@@ -17,8 +15,8 @@ export const CreateFCDepotProductFormSchema = z.object({
         )
         .min(1, { message: "Agrega al menos un color" }),
     retailPrice: z.number({ message: "Campo obligatorio" }).min(0.01, { message: "Debe ser mayor a 0" }),
-    midWholesalePrice: optionalPrice,
-    wholesalePrice: optionalPrice,
+    midWholesalePrice: z.number({ message: "Debe ser un número válido" }).min(0, { message: "Debe ser mayor o igual a 0" }).nullable(),
+    wholesalePrice: z.number({ message: "Debe ser un número válido" }).min(0, { message: "Debe ser mayor o igual a 0" }).nullable(),
     seo: z.object({
         metaTitle: z.string().trim().min(1, { message: "Campo obligatorio" }).max(60, { message: "Máximo 60 caracteres" }),
         metaDescription: z.string().trim().min(1, { message: "Campo obligatorio" }).max(160, { message: "Máximo 160 caracteres" }),

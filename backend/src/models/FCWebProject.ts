@@ -59,6 +59,12 @@ const FCWebProjectSchema = new Schema<TFCWebProject>({
         enum: Object.values(FCWebTechnology),
         default: []
     },
+    href: {
+        type: String,
+        trim: true,
+        maxlength: 255,
+        default: null
+    },
     seo: {
         type: FCWebProjectSEOSchema,
         required: true

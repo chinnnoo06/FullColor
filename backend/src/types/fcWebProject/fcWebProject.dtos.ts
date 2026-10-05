@@ -6,5 +6,6 @@ export type TFCWebProjectDto = {
     excerpt: string,
     content: string,
     technologies: FCWebTechnology[],
+    href?: string | null,
     seo: TSEO
 }

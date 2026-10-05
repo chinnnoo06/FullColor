@@ -2,6 +2,8 @@ import { redirect } from 'next/navigation'
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
 import { Hero } from '@/components/fcDepot/Hero'
+import { FCDepotCatalog } from '@/components/fcDepot/fcDepotCatalog/FCDepotCatalog'
+import { ScrollToDepotProduct } from '@/components/fcDepot/fcDepotCatalog/ScrollToDepotProduct'
 import { getFCDepotProductsService } from '@/services/server/fcDepotProduct.service'
 
 export default async function DepotPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
@@ -18,8 +20,10 @@ export default async function DepotPage({ searchParams }: { searchParams: Promis
 
   return (
     <>
+      <ScrollToDepotProduct />
       <Hero />
       <MarqueeBanner image={ImgBanner} />
+      <FCDepotCatalog fcDepotProducts={fcDepotProducts} pagination={pagination} />
     </>
   )
 }

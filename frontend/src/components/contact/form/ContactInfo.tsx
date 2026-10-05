@@ -13,7 +13,7 @@ type TContactInfoProps = {
     showMoreLink?: boolean
 }
 
-export const ContactInfo = ({ id = 'contact-form', dataSection = 'contact-form', showMoreLink = false }: TContactInfoProps) => {
+export const ContactInfo = ({ id = 'contacto-formulario', dataSection = 'contacto-formulario', showMoreLink = false }: TContactInfoProps) => {
     return (
         <section id={id} data-section={dataSection} className="scroll-mt-15 lg:scroll-mt-20 bg-thrird py-15 lg:py-20">
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">

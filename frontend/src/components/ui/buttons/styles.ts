@@ -9,6 +9,12 @@ export const BUTTON_VARIANT: Record<TLinkButtonVariant, string> = {
   thrird: 'border-primary bg-transparent text-primary hover:border-primary hover:bg-primary hover:text-thrird',
 };
 
+export const BUTTON_VARIANT_STATIC: Record<TLinkButtonVariant, string> = {
+  primary: 'border-primary bg-primary text-fourth',
+  secondary: 'border-fourth bg-transparent text-fourth',
+  thrird: 'border-primary bg-transparent text-primary',
+};
+
 export const BUTTON_WIDTH: Record<TLinkButtonWidth, string> = {
   fit: 'w-fit',
   full: 'w-full',

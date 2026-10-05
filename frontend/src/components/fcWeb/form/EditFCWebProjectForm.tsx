@@ -23,6 +23,7 @@ export const EditFCWebProjectForm = ({ fcWebProject }: { fcWebProject: TFCWebPro
         defaultValues: {
             name: fcWebProject.name,
             excerpt: fcWebProject.excerpt,
+            href: fcWebProject.href ?? '',
             content: fcWebProject.content,
             technologies: fcWebProject.technologies,
             seo: {
@@ -58,6 +59,12 @@ export const EditFCWebProjectForm = ({ fcWebProject }: { fcWebProject: TFCWebPro
                     <Label htmlFor="excerpt">Extracto</Label>
                     <Textarea id="excerpt" rows={3} placeholder="Resumen breve del proyecto (máx. 300 caracteres)" {...register("excerpt")} />
                     <SpanError message={errors.excerpt?.message} />
+                </div>
+
+                <div className="form-group">
+                    <Label htmlFor="href" optional>URL del portafolio</Label>
+                    <Input type="url" id="href" placeholder="https://ejemplo.com" {...register("href", { setValueAs: (v) => v === '' ? null : v })} />
+                    <SpanError message={errors.href?.message} />
                 </div>
             </FormSection>
 

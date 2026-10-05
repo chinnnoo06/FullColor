@@ -1,6 +1,6 @@
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { SectionTitle } from '@/components/ui/SectionTitle'
-import { Pagination } from '@/components/ui/Pagination'
+import { PublicPagination } from '@/components/ui/PublicPagination'
 import { TFCServiceCategory } from '@/schemas/fcServiceCategory/fcServiceCategory.schemas'
 import { TFCService } from '@/schemas/fcService/fcService.schemas'
 import { TPagination } from '@/schemas/common/common.response.schemas'
@@ -18,7 +18,7 @@ export const FCServicesCatalog = ({ fcServiceCategories, fcServices, pagination,
     const basePath = currentCategory ? `/servicios?categoria=${currentCategory}` : '/servicios'
 
     return (
-        <section id="services-catalog" data-section="services-catalog" className="scroll-mt-15 lg:scroll-mt-20 bg-thrird py-15 lg:py-20">
+        <section id="servicios-catalogo" data-section="servicios-catalogo" className="scroll-mt-15 lg:scroll-mt-20 bg-thrird py-15 lg:py-20">
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <div className="flex flex-col gap-10 lg:gap-15">
 
@@ -46,7 +46,7 @@ export const FCServicesCatalog = ({ fcServiceCategories, fcServices, pagination,
                         </ul>
                     )}
 
-                    <Pagination pagination={pagination} basePath={basePath} anchor="services-catalog" />
+                    <PublicPagination pagination={pagination} basePath={basePath} anchor="servicios-catalogo" />
                 </div>
             </div>
         </section>

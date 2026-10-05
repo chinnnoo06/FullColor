@@ -15,7 +15,7 @@ export const WhatsAppLines = () => {
     const inView = useInView(gridRef, { once: true, amount: 0.1 })
 
     return (
-        <section id="contact-lines" data-section="contact-lines" className="relative bg-fourth py-15 lg:py-20">
+        <section id="contacto-lineas" data-section="contacto-lineas" className="relative bg-fourth py-15 lg:py-20">
             <SectionCurve fill="fill-thrird" />
             <div className="flex flex-col gap-10 lg:gap-15 mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <Reveal variants={fadeUp} className="flex flex-col gap-2.5">

@@ -20,7 +20,12 @@ export type TFCWebProject = {
     excerpt: string,
     content: string,
     technologies: FCWebTechnology[],
+    href: string | null,
     seo: TSEO
 };
+
+export type TCreateFCWebProject = Omit<TFCWebProject, 'href'> & {
+    href?: string | null,
+}
 
 export type TFCWebProjectDocument = HydratedDocument<TFCWebProject>

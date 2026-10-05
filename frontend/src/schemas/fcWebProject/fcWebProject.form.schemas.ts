@@ -10,6 +10,7 @@ const htmlHasContent = (html: string) =>
 export const CreateFCWebProjectFormSchema = z.object({
     name: z.string().trim().min(1, { message: "Campo obligatorio" }).max(100, { message: "Máximo 100 caracteres" }),
     excerpt: z.string().trim().min(1, { message: "Campo obligatorio" }).max(300, { message: "Máximo 300 caracteres" }),
+    href: z.string().trim().url("La URL del portafolio debe ser una URL válida").max(255, "Máximo 255 caracteres").nullable(),
     content: z.string().refine(htmlHasContent, { message: "Campo Obligatorio" }),
     technologies: z.array(FCWebTechnologySchema).min(1, { message: "Selecciona al menos una tecnología" }),
     seo: z.object({

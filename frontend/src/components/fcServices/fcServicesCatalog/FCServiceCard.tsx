@@ -6,7 +6,7 @@ type TFCServiceCardProps = { fcService: TFCService }
 
 export const FCServiceCard = ({ fcService }: TFCServiceCardProps) => {
     const image = fcService.images[0]
-    const href = `/contacto?line=principal&subject=${encodeURIComponent(`Cotización del servicio: ${fcService.name}`)}#contact-form`
+    const href = `/contacto?line=principal&subject=${encodeURIComponent(`Cotización del servicio: ${fcService.name}`)}#contacto-formulario`
 
     return (
         <Link href={href} className="group border-fourth/30 hover:border-primary/30 flex flex-col sm:flex-row xl:flex-col 2xl:flex-row items-center gap-5 rounded-xl border p-5 lg:p-10 transition-colors duration-300">

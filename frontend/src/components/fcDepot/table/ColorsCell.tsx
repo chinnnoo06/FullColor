@@ -12,7 +12,8 @@ export const ColorsCell = ({ colors }: { colors: TColor[] }) => {
             {colors.map((color) => (
                 <li key={color.hex} title={color.name} className="flex items-center gap-1.5">
                     <span
-                        className={`size-4 lg:size-4.5 shrink-0 rounded-full border border-white/30 bg-[${color.hex}]`}
+                        className="size-4 lg:size-4.5 shrink-0 rounded-full border border-white/30"
+                        style={{ backgroundColor: color.hex }}
                         aria-hidden="true"
                     />
                     <span className="text-fourth/75 text-xs lg:text-sm whitespace-nowrap">{color.name}</span>

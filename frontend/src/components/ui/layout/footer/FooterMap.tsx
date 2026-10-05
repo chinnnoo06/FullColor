@@ -1,7 +1,7 @@
 import { SectionLabel } from '@/components/ui/SectionLabel'
 
 export const FooterMap = () => (
-  <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
+  <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1 items-center text-center lg:items-start lg:text-start">
     <SectionLabel>Ubicación</SectionLabel>
     <div className="h-60 w-full overflow-hidden rounded-xl lg:h-full lg:min-h-60">
       <iframe

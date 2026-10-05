@@ -8,8 +8,8 @@ import ImgAbout from '@/assets/media/img1.webp'
 
 export const About = () => {
     return (
-        <section id="home-about" data-section="home-about" className="bg-thrird py-15 lg:py-20">
-            
+        <section id="inicio-nosotros" data-section="inicio-nosotros" className="bg-thrird py-15 lg:py-20">
+
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <div className="flex flex-col gap-10 lg:flex-row lg:gap-15 lg:items-center">
                     <Reveal variants={fadeUp} className="flex w-full flex-col gap-5 lg:w-[50%] xl:w-[60%]">
@@ -30,9 +30,9 @@ export const About = () => {
                                 Nuestra mision
                             </figcaption>
                             <blockquote className="font-barlow text-fourth/75 text-lg leading-snug lg:text-xl">
-                                “Brindar soluciones integrales de impresión y diseño que destaquen la identidad de
-                                nuestros clientes, ofreciendo un servicio rápido, innovador y con acabados
-                                excepcionales.”
+                                “Ayudar a personas y empresas a resolver sus necesidades mediante productos y servicios
+                                de calidad, brindando soluciones integrales y una experiencia basada en la confianza, la
+                                atención personalizada y el compromiso con los resultados.”
                             </blockquote>
                         </figure>
 

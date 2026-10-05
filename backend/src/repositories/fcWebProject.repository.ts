@@ -1,9 +1,9 @@
 import { FCWebProject } from "../models/FCWebProject";
-import { TFCWebProject } from "../types/fcWebProject/fcWebProject.types";
+import { TCreateFCWebProject } from "../types/fcWebProject/fcWebProject.types";
 
 export const fcWebProjectRepository = {
 
-    async create(data: TFCWebProject) {
+    async create(data: TCreateFCWebProject) {
         return FCWebProject.create(data)
     },
 

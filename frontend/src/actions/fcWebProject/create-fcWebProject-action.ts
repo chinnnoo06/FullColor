@@ -25,6 +25,7 @@ export const createFCWebProject = async (data: TCreateFCWebProjectForm): Promise
     formData.append("excerpt", parsed.data.excerpt)
     formData.append("content", parsed.data.content)
     formData.append("technologies", JSON.stringify(parsed.data.technologies))
+    if (parsed.data.href) formData.append("href", parsed.data.href)
     formData.append("seo", JSON.stringify(parsed.data.seo))
 
     parsed.data.images.forEach((image) => {

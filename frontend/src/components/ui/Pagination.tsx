@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import type { TPagination } from '@/schemas/common/common.response.schemas';
+import { usePagination } from '@/hooks/ui/usePagination';
 
 type TPaginationProps = {
     pagination: TPagination;
@@ -12,9 +13,7 @@ const CONTROL =
     'inline-flex items-center gap-2.5 rounded-lg px-5 py-2.5 text-sm lg:text-base transition-colors duration-300';
 
 export const Pagination = ({ pagination, basePath, anchor }: TPaginationProps) => {
-    const { page, totalPages, total, hasNextPage, hasPrevPage } = pagination;
-    const sep = basePath.includes('?') ? '&' : '?';
-    const href = (n: number) => `${basePath}${sep}page=${n}${anchor ? `#${anchor}` : ''}`;
+    const { page, totalPages, total, hasNextPage, hasPrevPage, href } = usePagination({ pagination, basePath, anchor });
 
     return (
         <nav aria-label="Paginación" className="flex flex-wrap items-center justify-between gap-5">

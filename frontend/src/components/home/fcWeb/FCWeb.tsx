@@ -16,7 +16,7 @@ export const FCWeb = () => {
     const { reduced, outerRef, viewportRef, trackRef, x, progress, distance, top } = useHorizontalScroll()
 
     return (
-        <section id="home-web" data-section="home-web" className="relative bg-fourth py-15 lg:py-20">
+        <section id="inicio-web" data-section="inicio-web" className="relative bg-fourth py-15 lg:py-20">
             <SectionCurve fill="fill-thrird" />
             <div className="flex flex-col gap-10 lg:gap-15">
                 <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">

@@ -11,7 +11,7 @@ export const Footer = () => {
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-15">
           <FooterBrand />
 
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:w-[70%] lg:justify-end gap-10 lg:gap-15">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 lg:w-[70%] lg:justify-end gap-10 lg:gap-15">
             <FooterNav />
             <FooterContact />
             <FooterMap />

@@ -68,6 +68,7 @@ export const fcWebProjectService = {
         fcWebProject.excerpt = data.excerpt
         fcWebProject.content = data.content
         fcWebProject.technologies = data.technologies
+        fcWebProject.href = data.href ?? null
         fcWebProject.seo = data.seo
 
         await fcWebProject.save()

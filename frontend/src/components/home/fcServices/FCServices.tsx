@@ -22,7 +22,7 @@ export const FCServices = ({ fcServiceCategories }: { fcServiceCategories: TFCSe
     const inView = useInView(listRef, { once: true, amount: 0.1 })
 
     return (
-        <section id="home-services" data-section="home-services" className="relative bg-fourth py-15 lg:py-20">
+        <section id="inicio-servicios" data-section="inicio-servicios" className="relative bg-fourth py-15 lg:py-20">
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-15">
                     <Reveal variants={fadeUp} className="flex w-full flex-col gap-5 lg:sticky lg:top-25 lg:w-[50%] xl:w-[40%]">

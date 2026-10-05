@@ -24,6 +24,7 @@ export const validateFCWebProjectInput = async (req: Request, res: Response, nex
             if (invalid.length > 0) throw new Error(`Invalid technologies: ${invalid.join(", ")}`)
             return true
         }).run(req)
+    await body("href").optional({ nullable: true }).isURL().withMessage('La URL del portafolio debe ser una URL válida').isLength({ max: 255 }).withMessage('Máximo 255 caracteres').run(req)
     await body("seo.metaTitle").notEmpty().withMessage("Meta title is required").isLength({ max: 60 }).withMessage("Meta title must be 60 characters or less").run(req)
     await body("seo.metaDescription").notEmpty().withMessage("Meta description is required").isLength({ max: 160 }).withMessage("Meta description must be 160 characters or less").run(req)
     await body("content")

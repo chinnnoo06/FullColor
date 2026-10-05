@@ -12,7 +12,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 
 export const FCDepot = () => {
     return (
-        <section id="home-depot" data-section="home-depot" className="relative bg-thrird py-15 lg:py-20">
+        <section id="inicio-depot" data-section="inicio-depot" className="relative bg-thrird py-15 lg:py-20">
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
                 <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-15">
 

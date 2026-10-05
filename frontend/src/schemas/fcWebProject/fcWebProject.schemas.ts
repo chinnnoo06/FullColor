@@ -10,6 +10,7 @@ export const FCWebProjectSchema = z.object({
     content: z.string(),
     images: z.array(z.string()),
     technologies: z.array(FCWebTechnologySchema),
+    href: z.string().nullable(),
     seo: SEOSchema,
 });
 

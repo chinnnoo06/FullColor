@@ -25,7 +25,7 @@ export default async function HomePage() {
       <FCDepot />
       <FCWeb />
       <Cta />
-      <ContactInfo id="home-contact" dataSection="home-contact" showMoreLink />
+      <ContactInfo id="inicio-contacto" dataSection="inicio-contacto" showMoreLink />
     </>
   )
 }
