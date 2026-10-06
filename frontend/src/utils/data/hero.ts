@@ -14,7 +14,7 @@ export const HERO_SLIDES = [
     { image: img12, alt: 'Playeras deportivas personalizadas con logo', label: 'Textil personalizado', shape: 'tall' },
     { image: img13, alt: 'Plotter imprimiendo stickers de Full Color', label: 'Impresión DTF', shape: 'wide' },
     { image: img14, alt: 'Bolsa de papel kraft impresa con logotipo', label: 'Bolsas impresas', shape: 'tall' },
-]
+] as const
 
 export const HERO_SERVICE_LABELS = [
     'Impresión',
