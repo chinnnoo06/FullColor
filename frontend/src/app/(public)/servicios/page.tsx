@@ -1,4 +1,16 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation'
+
+export const metadata: Metadata = {
+  title: 'Servicios de impresión y personalización',
+  description: 'Catálogo de servicios de impresión, personalización y publicidad en Guadalajara. Lonas, DTF, grabado láser, playeras, señalética y más.',
+  alternates: { canonical: '/servicios' },
+  openGraph: {
+    url: '/servicios',
+    title: 'Servicios de impresión y personalización | FullColor',
+    description: 'Catálogo de servicios de impresión, personalización y publicidad en Guadalajara.',
+  },
+};
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
 import { Hero } from '@/components/fcServices/Hero'

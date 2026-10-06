@@ -53,7 +53,7 @@ export const FCDepotProductCard = ({ fcDepotProduct, page }: TFCDepotProductCard
 
                 <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                <div className="absolute inset-2.5 lg:inset-5 flex translate-y-2 items-center justify-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="absolute inset-1 small:inset-2.5 lg:inset-5 flex translate-y-2 items-center justify-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     <SpanButton width='full'>Ver más</SpanButton>
                 </div>
             </div>

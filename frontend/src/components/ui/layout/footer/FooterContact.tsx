@@ -1,9 +1,9 @@
-import { CONTACT } from '@/utils/data/contact'
+import { WHATSAPP_LINES, CONTACT_EMAIL } from '@/utils/data/contact'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 
 const CONTACT_LINKS = [
-  ...CONTACT.whatsappLines.map((line) => ({ label: line.label, value: line.display, href: line.url, external: true })),
-  { label: 'Correo', value: CONTACT.email.address, href: CONTACT.email.href, external: false },
+  ...WHATSAPP_LINES.map((line) => ({ label: line.label, value: line.display, href: line.url, external: true })),
+  { label: 'Correo', value: CONTACT_EMAIL.address, href: CONTACT_EMAIL.href, external: false },
 ] as const
 
 export const FooterContact = () => (

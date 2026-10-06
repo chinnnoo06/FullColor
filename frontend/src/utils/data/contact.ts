@@ -1,5 +1,4 @@
 import { WhatsAppLineKeySchema, TWhatsAppLineKey } from '@/schemas/enums.schemas';
-import type { TContactProcessStep, TContactSocialItem, TWhatsAppLineCard } from '@/types/content.types';
 import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa6';
 import ImgPrincipal from '@/assets/media/img1.webp';
 import ImgImpresiones from '@/assets/media/img11.webp';
@@ -20,69 +19,65 @@ const whatsapp = (key: TWhatsAppLineKey, label: string, display: string, number:
   url: `https://wa.me/${number}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
 });
 
-const WHATSAPP_LINES = [
+export const WHATSAPP_LINES = [
   whatsapp('principal', 'FullColor Principal', '33 1273 6524', '5213312736524'),
   whatsapp('impresiones', 'FullColor Impresiones', '33 1828 8418', '5213318288418'),
   whatsapp('laser-dtf', 'FullColor Láser y DTF', '33 1414 7664', '5213314147664'),
   whatsapp('depot-web', 'FullColor Depot y Web', '33 1300 9184', '5213313009184'),
 ] as const;
 
-export const CONTACT = {
-  whatsapp: {
-    ...WHATSAPP_LINES[0],
-    label: 'Escríbenos por WhatsApp',
-    message: WHATSAPP_MESSAGE,
+export const CONTACT_WHATSAPP = {
+  ...WHATSAPP_LINES[0],
+  label: 'Escríbenos por WhatsApp',
+  message: WHATSAPP_MESSAGE,
+} as const;
+
+export const CONTACT_EMAIL = {
+  address: 'fullcolorgdl@gmail.com',
+  href: 'mailto:fullcolorgdl@gmail.com',
+} as const;
+
+export const CONTACT_ADDRESS = {
+  display: 'C. José Fernando Abascal y Souza 362, San Juan de Dios, 44360 Guadalajara, Jal.',
+  href: 'https://maps.app.goo.gl/AztD2dKHkeXam8bNA',
+} as const;
+
+export const CONTACT_SOCIAL = {
+  instagram: {
+    url: 'https://www.instagram.com/fullcolorgdl/',
+    label: 'Síguenos en Instagram',
   },
-
-  whatsappLines: WHATSAPP_LINES,
-
-  email: {
-    address: 'fullcolorgdl@gmail.com',
-    href: 'mailto:fullcolorgdl@gmail.com',
-  },
-
-  address: {
-    display: 'C. José Fernando Abascal y Souza 362, San Juan de Dios, 44360 Guadalajara, Jal.',
-    href: 'https://maps.google.com/?q=C.+José+Fernando+Abascal+y+Souza+362,+San+Juan+de+Dios,+44360+Guadalajara,+Jal.',
-  },
-
-  social: {
-    instagram: {
-      url: 'https://www.instagram.com/fullcolorgdl/',
-      label: 'Síguenos en Instagram',
-    },
-    facebook: {
-      url: 'https://www.facebook.com/Fullcolorgdl',
-      label: 'Síguenos en Facebook',
-    },
+  facebook: {
+    url: 'https://www.facebook.com/Fullcolorgdl',
+    label: 'Síguenos en Facebook',
   },
 } as const;
 
-export const CONTACT_SOCIAL_ITEMS: TContactSocialItem[] = [
+export const CONTACT_SOCIAL_ITEMS = [
   {
     icon: FaInstagram,
     label: 'Instagram',
     handle: '@fullcolorgdl',
     detail: 'Trabajos, procesos y novedades del taller.',
-    url: CONTACT.social.instagram.url,
+    url: CONTACT_SOCIAL.instagram.url,
   },
   {
     icon: FaFacebookF,
     label: 'Facebook',
     handle: 'Fullcolorgdl',
     detail: 'Promociones, proyectos terminados y más.',
-    url: CONTACT.social.facebook.url,
+    url: CONTACT_SOCIAL.facebook.url,
   },
   {
     icon: FaWhatsapp,
     label: 'WhatsApp',
     handle: '33 1273 6524',
     detail: 'Escríbenos directo y te respondemos rápido.',
-    url: CONTACT.whatsapp.url,
+    url: CONTACT_WHATSAPP.url,
   },
 ];
 
-export const CONTACT_STEPS: TContactProcessStep[] = [
+export const CONTACT_STEPS = [
   {
     step: '01',
     title: 'Escríbenos',
@@ -100,7 +95,7 @@ export const CONTACT_STEPS: TContactProcessStep[] = [
   },
 ];
 
-export const WHATSAPP_LINE_CARDS: TWhatsAppLineCard[] = [
+export const WHATSAPP_LINE_CARDS = [
   {
     key: 'principal',
     label: 'FullColor Principal',

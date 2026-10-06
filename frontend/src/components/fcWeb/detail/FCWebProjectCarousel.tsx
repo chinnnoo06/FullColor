@@ -6,7 +6,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6'
 
 const ARROW =
-    'cursor-pointer border-primary text-primary hover:bg-primary hover:text-thrird flex size-10 lg:size-12 shrink-0 items-center justify-center rounded-xl border-2 transition-colors duration-300'
+    'cursor-pointer border-fourth/30 text-fourth/75 hover:bg-primary hover:text-thrird flex px-5 py-2.5 shrink-0 items-center justify-center rounded-xl border transition-colors duration-300'
 
 type TFCWebProjectCarouselProps = {
     images: string[]
@@ -85,7 +85,7 @@ export const FCWebProjectCarousel = ({ images, name }: TFCWebProjectCarouselProp
                                     onClick={() => embla?.scrollTo(i)}
                                     aria-label={`Ir a la imagen ${i + 1}`}
                                     aria-current={selected === i}
-                                    className={`size-2.5 rounded-full transition-colors duration-300 ${selected === i ? 'bg-primary' : 'bg-primary/30 hover:bg-primary/75'}`}
+                                    className={`cursor-pointer size-2 lg:size-2.5 rounded-full transition-colors duration-300 ${selected === i ? 'bg-primary' : 'bg-fourth/30 hover:bg-primary/75'}`}
                                 />
                             </li>
                         ))}

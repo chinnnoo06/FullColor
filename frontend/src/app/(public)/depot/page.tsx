@@ -1,4 +1,16 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation'
+
+export const metadata: Metadata = {
+  title: 'FullColor Depot',
+  description: 'Catálogo de artículos personalizables con tu marca. Termos, tazas, playeras, bolsas y más desde Guadalajara. Cotiza al instante.',
+  alternates: { canonical: '/depot' },
+  openGraph: {
+    url: '/depot',
+    title: 'FullColor Depot | Artículos personalizables',
+    description: 'Catálogo de artículos personalizables con tu marca desde Guadalajara.',
+  },
+};
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
 import { Hero } from '@/components/fcDepot/Hero'

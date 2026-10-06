@@ -5,7 +5,7 @@ import { SectionLabel } from '../../ui/SectionLabel'
 import { LinkButton } from '../../ui/buttons/LinkButton'
 import { ContactForm } from './ContactForm'
 import { fadeUp, fadeUpScale } from '@/utils/motion/reveal'
-import { CONTACT } from '@/utils/data/contact'
+import { CONTACT_EMAIL, CONTACT_ADDRESS } from '@/utils/data/contact'
 
 type TContactInfoProps = {
     id?: string
@@ -40,22 +40,22 @@ export const ContactInfo = ({ id = 'contacto-formulario', dataSection = 'contact
                             <div className="flex flex-col">
                                 <span className="font-barlow text-fourth/75 text-xs lg:text-sm tracking-[0.15em] uppercase">Correo</span>
                                 <a
-                                    href={CONTACT.email.href}
+                                    href={CONTACT_EMAIL.href}
                                     className="font-barlow text-fourth hover:text-secondary text-lg font-medium transition-colors duration-300 lg:text-xl"
                                 >
-                                    {CONTACT.email.address}
+                                    {CONTACT_EMAIL.address}
                                 </a>
                             </div>
 
                             <div className="flex flex-col">
                                 <span className="font-barlow text-fourth/75 text-xs lg:text-sm tracking-[0.15em] uppercase">Ubicación</span>
                                 <a
-                                    href={CONTACT.address.href}
+                                    href={CONTACT_ADDRESS.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="font-barlow text-fourth hover:text-secondary text-lg font-medium transition-colors duration-300 lg:text-xl"
                                 >
-                                    {CONTACT.address.display}
+                                    {CONTACT_ADDRESS.display}
                                 </a>
                             </div>
                         </div>

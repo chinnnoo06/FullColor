@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
 import ToastNotification from "@/components/ui/ToastNotification";
 import localFont from 'next/font/local';
 import { DM_Sans, Barlow } from "next/font/google";
-
+import { StructuredData } from "@/components/seo/StructuredData";
+import { SITE } from "@/utils/data/site";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -29,48 +30,89 @@ const beyno = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "FullColor | Soluciones para hacer crecer tu negocio",
-    template: "%s | FullColor",
+    default: SITE.title,
+    template: `%s | ${SITE.name}`,
   },
-  description:
-    "Impresión, personalización, publicidad y páginas web para hacer crecer tu negocio. Playeras, termos, tazas, lonas, corte láser, DTF y más.",
+  description: SITE.description,
+  applicationName: SITE.name,
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  category: 'Impresión y personalización',
   keywords: [
-    "impresión",
-    "artículos promocionales",
-    "personalización",
-    "playeras personalizadas",
-    "termos grabados",
-    "sublimación",
-    "DTF",
-    "corte láser",
-    "lonas",
-    "páginas web",
+    'impresión Guadalajara',
+    'personalización de artículos',
+    'playeras personalizadas Guadalajara',
+    'DTF textil Guadalajara',
+    'corte láser Guadalajara',
+    'termos grabados',
+    'lonas publicitarias',
+    'artículos promocionales Guadalajara',
+    'páginas web Guadalajara',
+    'FullColor',
+    'FullColor Depot',
+    'FullColor Web',
   ],
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    type: "website",
-    locale: "es_MX",
-    siteName: "FullColor",
-    title: "FullColor | Soluciones para hacer crecer tu negocio",
-    description:
-      "Impresión, personalización, publicidad y páginas web para hacer crecer tu negocio.",
+    type: 'website',
+    locale: SITE.locale,
+    url: '/',
+    siteName: SITE.name,
+    title: SITE.title,
+    description: SITE.shortDescription,
+    images: [
+      {
+        url: SITE.ogImage,
+        width: SITE.ogImageWidth,
+        height: SITE.ogImageHeight,
+        alt: SITE.ogImageAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE.title,
+    description: SITE.shortDescription,
+    images: [{ url: SITE.ogImage, alt: SITE.ogImageAlt }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  formatDetection: {
+    telephone: true,
+    address: true,
+    email: true,
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export const viewport: Viewport = {
+  themeColor: '#76B82A',
+  colorScheme: 'dark',
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="es"
-      className={`${dmSans.variable} ${barlow.variable} ${beyno.variable}`}
-    >
-      <ReactQueryProvider>
+    <html lang="es-MX" className={`${dmSans.variable} ${barlow.variable} ${beyno.variable}`}>
       <body className="bg-thrird text-fourth antialiased min-h-screen">
-        {children}
-         <ToastNotification />
+        <StructuredData />
+        <ReactQueryProvider>
+          {children}
+          <ToastNotification />
+        </ReactQueryProvider>
       </body>
-      </ReactQueryProvider>
     </html>
   );
 }

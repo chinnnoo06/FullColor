@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ContactFormSchema, TContactForm } from '@/schemas/contact/contact.form.schemas'
-import { CONTACT } from '@/utils/data/contact'
+import { WHATSAPP_LINES } from '@/utils/data/contact'
 import { FormSection } from '@/components/ui/form/FormSection'
 import { FormSectionTitle } from '@/components/ui/form/FormSectionTitle'
 import { Label } from '@/components/ui/form/Label'
@@ -31,7 +31,7 @@ export const ContactForm = () => {
 
         const encodedMessage = encodeURIComponent(`${subject}\n\n${greeting}\n\n${details}`);
 
-        const line = CONTACT.whatsappLines.find((item) => item.key === data.line)
+        const line = WHATSAPP_LINES.find((item) => item.key === data.line)
         if (!line) return
 
         const url = `https://wa.me/${line.number}?text=${encodedMessage}`
@@ -59,7 +59,7 @@ export const ContactForm = () => {
                             <option value="" disabled>
                                 Elige una línea
                             </option>
-                            {CONTACT.whatsappLines.map((line) => (
+                            {WHATSAPP_LINES.map((line) => (
                                 <option key={line.key} value={line.key}>
                                     {line.label}
                                 </option>

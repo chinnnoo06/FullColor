@@ -31,14 +31,14 @@ type TFCWebProjectEditorProps = {
 
 const CONTENT_STYLE = `
   body { font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.75); background: #1F1F1F; max-width: 100%; }
-  h2 { font-family: Barlow, ui-sans-serif, system-ui, sans-serif; font-weight: 700; text-transform: uppercase; color: #ffffff; font-size: 30px; margin-top: 40px; }
+  h2 { font-family: Barlow, ui-sans-serif, system-ui, sans-serif; font-weight: 700; text-transform: uppercase; color: #ffffff; font-size: 30px; margin-top: 20px; }
   p, ul, ol, blockquote, table, hr { margin-top: 20px; }
   body > :first-child { margin-top: 0; }
   a { color: #76B82A; text-decoration: underline; text-underline-offset: 4px; }
   strong, b { color: #ffffff; font-weight: 600; }
-  ul { list-style: disc; padding-left: 24px; }
-  ol { list-style: decimal; padding-left: 24px; }
-  li { margin-bottom: 8px; }
+  ul { list-style: disc; padding-left: 20px; }
+  ol { list-style: decimal; padding-left: 20px; }
+  li { margin-bottom: 10px; }
   blockquote { border-left: 4px solid #76B82A; padding-left: 20px; color: #76B82A; font-weight: 500; }
   blockquote p { margin-top: 8px; }
   img { width: 100%; max-width: 1152px; aspect-ratio: 4 / 3; max-height: 440px; object-fit: cover; border-radius: 12px; }

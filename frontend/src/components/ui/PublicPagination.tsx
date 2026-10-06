@@ -21,7 +21,7 @@ const NAV_ACTIVE =
 const NAV_DISABLED =
     'border-fourth/15 text-fourth/30 inline-flex items-center gap-1.5 rounded-xl border px-5 py-2.5 text-sm font-medium lg:text-base'
 
-const ELLIPSIS = 'text-fourth/40 font-barlow flex size-10 items-center justify-center text-sm lg:size-11 lg:text-base'
+const ELLIPSIS = 'text-fourth/70 font-barlow flex size-10 items-center justify-center text-sm lg:size-11 lg:text-base'
 
 export const PublicPagination = ({ pagination, basePath, anchor }: TPublicPaginationProps) => {
     const {

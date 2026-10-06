@@ -4,7 +4,7 @@ import { SectionTitle } from '../ui/SectionTitle'
 import { SectionLabel } from '../ui/SectionLabel'
 import { LinkButton } from '../ui/buttons/LinkButton'
 import { fadeBlur } from '@/utils/motion/reveal'
-import { CONTACT } from '@/utils/data/contact'
+import { CONTACT_WHATSAPP } from '@/utils/data/contact'
 import ImgCta from '@/assets/media/backgrounds/bg2.webp'
 
 export const Cta = () => {
@@ -35,7 +35,7 @@ export const Cta = () => {
                         </p>
 
                         <div className="flex w-full flex-col gap-5 small:flex-row small:flex-wrap small:items-center">
-                            <LinkButton href={CONTACT.whatsapp.url} width="responsive">Cotizar Por WhatsApp</LinkButton>
+                            <LinkButton href={CONTACT_WHATSAPP.url} width="responsive">Cotizar Por WhatsApp</LinkButton>
 
                             <LinkButton href="/contacto" variant="secondary" width="responsive">Ir A Contacto</LinkButton>
                         </div>

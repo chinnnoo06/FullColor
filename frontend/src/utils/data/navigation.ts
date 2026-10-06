@@ -1,9 +1,8 @@
-import { TNavLink, TSocialLink } from '@/types/content.types';
 import { FiLogOut } from 'react-icons/fi';
 import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa6';
-import { CONTACT } from './contact';
+import { CONTACT_WHATSAPP, CONTACT_SOCIAL } from './contact';
 
-export const NAV_LINKS: TNavLink[] = [
+export const NAV_LINKS = [
   { label: 'Inicio', href: '/' },
   { label: 'Servicios', href: '/servicios' },
   { label: 'FullColor Depot', href: '/depot' },
@@ -11,18 +10,18 @@ export const NAV_LINKS: TNavLink[] = [
   { label: 'Contacto', href: '/contacto' },
 ];
 
-export const SOCIAL_LINKS: TSocialLink[] = [
-  { label: CONTACT.social.instagram.label, url: CONTACT.social.instagram.url, icon: FaInstagram },
-  { label: CONTACT.social.facebook.label, url: CONTACT.social.facebook.url, icon: FaFacebookF },
-  { label: CONTACT.whatsapp.label, url: CONTACT.whatsapp.url, icon: FaWhatsapp },
+export const SOCIAL_LINKS = [
+  { label: CONTACT_SOCIAL.instagram.label, url: CONTACT_SOCIAL.instagram.url, icon: FaInstagram },
+  { label: CONTACT_SOCIAL.facebook.label, url: CONTACT_SOCIAL.facebook.url, icon: FaFacebookF },
+  { label: CONTACT_WHATSAPP.label, url: CONTACT_WHATSAPP.url, icon: FaWhatsapp },
 ];
 
-export const LEGAL_LINKS: TNavLink[] = [
+export const LEGAL_LINKS = [
   { label: 'Privacidad y aviso legal', href: '/privacidad' },
   { label: 'Licencia y Creditos', href: '/creditos' },
 ];
 
-export const ADMIN_LINKS: TNavLink[] = [
+export const ADMIN_LINKS = [
   { label: 'Categorías de FC', href: '/admin/fullcolor-categorias-servicios' },
   { label: 'Crear categoría de FC', href: '/admin/fullcolor-categorias-servicios/crear' },
   { label: 'Servicios de FC', href: '/admin/fullcolor-servicios' },

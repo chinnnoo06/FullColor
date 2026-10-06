@@ -1,5 +1,4 @@
 import type { IconType } from 'react-icons'
-import { TWebFeature } from '@/types/content.types';
 import { FCWebTechnologySchema, TFCWebTechnology } from '@/schemas/enums.schemas';
 export type { TFCWebTechnology } from '@/schemas/enums.schemas';
 import img12 from '@/assets/media/img12.webp';
@@ -18,7 +17,7 @@ import {
   SiNestjs,
 } from 'react-icons/si'
 
-export const WEB_FEATURES: TWebFeature[] = [
+export const WEB_FEATURES = [
   {
     title: 'Adaptable a tu giro',
     detail: 'Estructura y contenido pensados para lo que vende tu negocio.',

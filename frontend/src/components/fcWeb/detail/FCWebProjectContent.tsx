@@ -1,6 +1,6 @@
 const PROSE = [
     'text-fourth/75 text-base lg:text-lg flex flex-col gap-5',
-    '[&_h2]:font-barlow [&_h2]:text-fourth [&_h2]:text-2xl [&_h2]:lg:text-3xl [&_h2]:font-bold [&_h2]:uppercase [&_h2]:mt-10',
+    '[&_h2]:font-barlow [&_h2]:text-fourth [&_h2]:text-2xl [&_h2]:lg:text-3xl [&_h2]:font-bold [&_h2]:uppercase [&_h2]:mt-5',
     '[&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4',
     '[&_strong]:text-fourth [&_strong]:font-semibold',
     '[&_ul]:list-disc [&_ol]:list-decimal [&_ul]:pl-5 [&_ol]:pl-5 [&_li]:mb-2.5',

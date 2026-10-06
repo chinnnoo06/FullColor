@@ -1,4 +1,16 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation'
+
+export const metadata: Metadata = {
+  title: 'FullColor Web',
+  description: 'Portafolio de páginas web diseñadas para negocios locales en Guadalajara. Sitios modernos, rápidos y hechos a medida.',
+  alternates: { canonical: '/web' },
+  openGraph: {
+    url: '/web',
+    title: 'FullColor Web | Portafolio de proyectos',
+    description: 'Portafolio de páginas web para negocios locales en Guadalajara.',
+  },
+};
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
 import { Hero } from '@/components/fcWeb/Hero'
