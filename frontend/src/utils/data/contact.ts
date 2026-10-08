@@ -1,6 +1,6 @@
 import { WhatsAppLineKeySchema, TWhatsAppLineKey } from '@/schemas/enums.schemas';
 import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa6';
-import ImgPrincipal from '@/assets/media/img1.webp';
+import ImgPrincipal from '@/assets/media/img24.webp';
 import ImgImpresiones from '@/assets/media/img21.webp';
 import ImgLaserDtf from '@/assets/media/img22.webp';
 import ImgDepotWeb from '@/assets/media/img23.webp';

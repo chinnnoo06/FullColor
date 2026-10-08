@@ -1,40 +1,51 @@
-import type { StaticImageData } from 'next/image'
-import { Marquee } from '@/components/ui/Marquee'
-import { Banner } from './Banner'
-import { BulletHex } from '../ui/BulletHex'
+'use client';
+
+import Image, { type StaticImageData } from 'next/image';
+import { Marquee } from '@/components/ui/Marquee';
+import { Reveal } from '@/components/ui/Reveal';
+import { BulletHex } from '@/components/ui/BulletHex';
+import { fadeBlur } from '@/utils/motion/reveal';
 
 type TMarqueeBannerProps = {
-  image: StaticImageData
-  imageClassName?: string
-}
+  image: StaticImageData;
+  items: readonly string[];
+  imageClassName?: string;
+  marqueeClassName?: string;
+  bulletClassName?: string;
+};
 
-const HEX_BULLET = '[clip-path:polygon(25%_0,75%_0,100%_50%,75%_100%,25%_100%,0_50%)]'
-
-const WORK_BANNER_ITEMS = [
-    'Playeras', 'Serigrafía', 'DTF', 'Sublimación', 'Termos', 'Tazas',
-    'Lonas', 'Vinil', 'Corte láser', 'Grabado láser', 'Etiquetas', 'Stickers',
-    'Imanes', 'Botones', 'Llaveros', 'Lanyards', 'Tarjetas PVC',
-    'Tarjetas de presentación', 'Volantes', 'Impresión UV', 'Impresión offset',
-    'Canvas', 'Microperforado', 'Coroplast', 'Displays', 'Banderas',
-    'Caballetes', 'Cajas', 'Páginas web',
-] as const
-
-export const MarqueeBanner = ({  image, imageClassName }: TMarqueeBannerProps) => {
+export const MarqueeBanner = ({
+  image,
+  items,
+  imageClassName,
+  marqueeClassName = 'bg-primary text-thrird',
+  bulletClassName = 'fill-thrird',
+}: TMarqueeBannerProps) => {
   return (
     <div>
-      <Marquee duration={90} gap={20} className="bg-primary text-thrird py-5">
-        {WORK_BANNER_ITEMS.map((item) => (
+      <Marquee duration={90} gap={20} className={`${marqueeClassName} py-5`}>
+        {items.map((item) => (
           <span
             key={item}
             className="font-barlow flex items-center gap-5 text-sm font-semibold tracking-[0.15em] whitespace-nowrap uppercase lg:text-base"
           >
             {item}
-            <BulletHex className='fill-thrird'/>
+            <BulletHex className={bulletClassName} />
           </span>
         ))}
       </Marquee>
 
-      <Banner image={image} className={imageClassName} />
+      <Reveal variants={fadeBlur}>
+        <div className="relative overflow-hidden">
+          <Image
+            src={image}
+            alt=""
+            sizes="100vw"
+            placeholder="blur"
+            className={`h-[60svh] lg:h-[clamp(500px,90dvh,720px)] w-full object-cover ${imageClassName ?? ''}`}
+          />
+        </div>
+      </Reveal>
     </div>
-  )
-}
+  );
+};

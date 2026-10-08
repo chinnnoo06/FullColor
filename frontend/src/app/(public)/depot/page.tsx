@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   },
 };
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
-import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
+import { MARQUEE_DEPOT } from '@/utils/data/marquee'
+import ImgBanner from '@/assets/media/img28.webp'
 import { Hero } from '@/components/fcDepot/Hero'
 import { FCDepotCatalog } from '@/components/fcDepot/fcDepotCatalog/FCDepotCatalog'
 import { ScrollToDepotProduct } from '@/components/fcDepot/fcDepotCatalog/ScrollToDepotProduct'
@@ -34,7 +35,7 @@ export default async function DepotPage({ searchParams }: { searchParams: Promis
     <>
       <ScrollToDepotProduct />
       <Hero />
-      <MarqueeBanner image={ImgBanner} />
+      <MarqueeBanner image={ImgBanner} items={MARQUEE_DEPOT} marqueeClassName="bg-linear-to-r from-primary to-blue-600 text-fourth" bulletClassName="fill-fourth" />
       <FCDepotCatalog fcDepotProducts={fcDepotProducts} pagination={pagination} />
     </>
   )

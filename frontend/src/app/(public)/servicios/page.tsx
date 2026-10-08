@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   },
 };
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
-import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
+import { MARQUEE_SERVICIOS } from '@/utils/data/marquee'
+import ImgBanner from '@/assets/media/img29.webp'
 import { Hero } from '@/components/fcServices/Hero'
 import { getFCServicesService } from '@/services/server/fcService.service'
 import { getFCServiceCategoriesService } from '@/services/server/fcServiceCategory.service'
@@ -40,7 +41,7 @@ export default async function ServicesPage({ searchParams }: { searchParams: Pro
   return (
     <>
       <Hero />
-      <MarqueeBanner image={ImgBanner} />
+      <MarqueeBanner image={ImgBanner} items={MARQUEE_SERVICIOS} />
       <FCServicesCatalog fcServiceCategories={fcServiceCategories} fcServices={data.fcServices} pagination={data.pagination} currentCategory={categoria} />
     </>
   )

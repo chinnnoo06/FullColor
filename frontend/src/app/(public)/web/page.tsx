@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   },
 };
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
-import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
+import { MARQUEE_WEB } from '@/utils/data/marquee'
+import ImgBanner from '@/assets/media/img30.webp'
 import { Hero } from '@/components/fcWeb/Hero'
 import { FCWebProjects } from '@/components/fcWeb/fcWebProjects/FCWebProjects'
 import { getFCWebProjectsService } from '@/services/server/fcWebProject.service'
@@ -32,7 +33,7 @@ export default async function WebPage({ searchParams }: { searchParams: Promise<
   return (
     <>
       <Hero />
-      <MarqueeBanner image={ImgBanner} />
+      <MarqueeBanner image={ImgBanner} items={MARQUEE_WEB} marqueeClassName="bg-blue-600 text-fourth" bulletClassName="fill-fourth" />
       <FCWebProjects fcWebProjects={fcWebProjects} pagination={pagination} />
     </>
   )

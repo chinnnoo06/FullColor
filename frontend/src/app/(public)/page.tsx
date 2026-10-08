@@ -5,6 +5,7 @@ import { FCDepot } from '@/components/home/fcDepot/FCDepot'
 import { FCWeb } from '@/components/home/fcWeb/FCWeb'
 import { Cta } from '@/components/sections/Cta'
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
+import { MARQUEE_HOME } from '@/utils/data/marquee'
 import ImgBanner from '@/assets/media/backgrounds/bg1.webp'
 import { ContactInfo } from '@/components/contact/form/ContactInfo'
 import { getFCServiceCategoriesService } from '@/services/server/fcServiceCategory.service'
@@ -20,7 +21,7 @@ export default async function HomePage() {
     <>
       <Hero />
       <About />
-      <MarqueeBanner image={ImgBanner} />
+      <MarqueeBanner image={ImgBanner} items={MARQUEE_HOME} />
       <FCServices fcServiceCategories={fcServiceCategories}/>
       <FCDepot />
       <FCWeb />

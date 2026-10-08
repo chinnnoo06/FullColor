@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   },
 };
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
+import { MARQUEE_CONTACTO } from '@/utils/data/marquee'
 import { WhatsAppLines } from '@/components/contact/whatsAppLines/WhatsAppLines'
 import { Process } from '@/components/contact/process/Process'
 import { ContactInfo } from '@/components/contact/form/ContactInfo'
@@ -22,7 +23,7 @@ export default function ContactPage() {
   return (
     <>
       <Hero />
-      <MarqueeBanner image={ImgBanner} />
+      <MarqueeBanner image={ImgBanner} items={MARQUEE_CONTACTO} />
       <Process />
       <Social />
       <WhatsAppLines />
