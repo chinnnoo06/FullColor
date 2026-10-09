@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'FullColor',
-  url: 'https://fullcolorgdl.com.mx',
+  url: 'https://fullcolorgdl.com',
   locale: 'es_MX',
   title: 'FullColor | Impresión, personalización y páginas web en Guadalajara',
   description: 'Taller de impresión y personalización en Guadalajara. Playeras DTF, termos grabados, lonas, corte láser y páginas web para hacer crecer tu negocio.',
