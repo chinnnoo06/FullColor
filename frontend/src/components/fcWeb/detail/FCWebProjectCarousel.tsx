@@ -55,7 +55,7 @@ export const FCWebProjectCarousel = ({ images, name }: TFCWebProjectCarouselProp
                                 aria-label={`${i + 1} de ${images.length}`}
                                 aria-hidden={selected !== i}
                             >
-                                <div className="relative aspect-video w-full overflow-hidden">
+                                <div className="relative aspect-[21/10] w-full overflow-hidden">
                                     <Image
                                         src={`${process.env.NEXT_PUBLIC_FC_WEB_PROJECTS_IMAGE_URL}/${image}`}
                                         alt={`${name}, imagen ${i + 1}`}

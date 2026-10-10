@@ -5,7 +5,7 @@ export const SITE = {
   title: 'FullColor | Impresión, personalización y páginas web en Guadalajara',
   description: 'Taller de impresión y personalización en Guadalajara. Playeras DTF, termos grabados, lonas, corte láser y páginas web para hacer crecer tu negocio.',
   shortDescription: 'Impresión, personalización y páginas web para negocios en Guadalajara.',
-  ogImage: '/og-image.jpg',
+  ogImage: '/og-image.jpeg',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'FullColor – Impresión, personalización y páginas web para negocios en Guadalajara',
