@@ -18,7 +18,7 @@ export const FCWebProjectCard = ({ fcWebProject }: TFCWebProjectCardProps) => {
             href={`/web/${fcWebProject.slug}`}
             className="group border-fourth/30 hover:border-primary/30 flex flex-col overflow-hidden rounded-xl border transition-colors duration-300"
         >
-            <div className="relative aspect-video w-full overflow-hidden bg-fourth/5">
+            <div className="relative aspect-[21/10] w-full overflow-hidden bg-fourth/5">
                 {image && (
                     <Image
                         src={`${process.env.NEXT_PUBLIC_FC_WEB_PROJECTS_IMAGE_URL}/${image}`}
