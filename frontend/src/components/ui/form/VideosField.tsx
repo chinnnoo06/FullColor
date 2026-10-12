@@ -80,7 +80,7 @@ export const VideosField = ({ videos, onChange, error, max = 5 }: TVideosFieldPr
                                     aria-label={`Quitar ${videos[i].name}`}
                                     className="bg-secondary text-primary absolute -top-2 -right-2 inline-flex cursor-pointer items-center justify-center rounded-full p-1.5 transition-colors duration-300 hover:bg-red-600"
                                 >
-                                    <FiX aria-hidden="true" className="size-3.5" />
+                                    <FiX aria-hidden="true" className="size-4 lg:size-4.5" />
                                 </button>
                             </li>
                         ))}

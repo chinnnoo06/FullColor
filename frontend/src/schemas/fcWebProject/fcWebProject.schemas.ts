@@ -12,6 +12,8 @@ export const FCWebProjectSchema = z.object({
     technologies: z.array(FCWebTechnologySchema),
     href: z.string().nullable(),
     seo: SEOSchema,
+    createdAt: z.string().optional(),
+    updatedAt: z.string().optional(),
 });
 
 export type TFCWebProject = z.infer<typeof FCWebProjectSchema>;

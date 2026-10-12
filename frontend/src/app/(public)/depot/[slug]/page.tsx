@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SHARED_OPEN_GRAPH, SHARED_TWITTER } from '@/utils/data/site';
 import { FCDepotProductInfo } from '@/components/fcDepot/detail/FCDepotProductInfo';
 import { FCDepotProductGallery } from '@/components/fcDepot/detail/FCDepotProductGallery';
 import { FCDepotProductBreadcrumb } from '@/components/fcDepot/detail/FCDepotProductBreadcrumb';
@@ -24,7 +25,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         description: product.seo.metaDescription,
         alternates: { canonical: productUrl },
         openGraph: {
+            ...SHARED_OPEN_GRAPH,
             url: productUrl,
+            title: product.seo.metaTitle,
+            description: product.seo.metaDescription,
+            ...(imageUrl && { images: [{ url: imageUrl, alt: product.name }] }),
+        },
+        twitter: {
+            ...SHARED_TWITTER,
             title: product.seo.metaTitle,
             description: product.seo.metaDescription,
             ...(imageUrl && { images: [{ url: imageUrl, alt: product.name }] }),

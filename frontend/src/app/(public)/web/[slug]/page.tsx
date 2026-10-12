@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SHARED_OPEN_GRAPH, SHARED_TWITTER } from '@/utils/data/site';
 import { notFound } from 'next/navigation'
 import { RevealOnLoad } from '@/components/ui/Reveal'
 import { fadeUp } from '@/utils/motion/reveal'
@@ -24,7 +25,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         description: project.seo.metaDescription,
         alternates: { canonical: projectUrl },
         openGraph: {
+            ...SHARED_OPEN_GRAPH,
             url: projectUrl,
+            title: project.seo.metaTitle,
+            description: project.seo.metaDescription,
+            ...(imageUrl && { images: [{ url: imageUrl, alt: project.name }] }),
+        },
+        twitter: {
+            ...SHARED_TWITTER,
             title: project.seo.metaTitle,
             description: project.seo.metaDescription,
             ...(imageUrl && { images: [{ url: imageUrl, alt: project.name }] }),

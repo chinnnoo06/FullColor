@@ -1,15 +1,13 @@
 import type { Metadata } from 'next';
+import { SHARED_OPEN_GRAPH, SHARED_TWITTER } from '@/utils/data/site';
 import { Hero } from '@/components/contact/Hero'
 
 export const metadata: Metadata = {
   title: 'Contacto',
   description: 'Contáctanos para cotizar tu proyecto. WhatsApp, correo o visítanos en Guadalajara. Respondemos rápido.',
   alternates: { canonical: '/contacto' },
-  openGraph: {
-    url: '/contacto',
-    title: 'Contacto | FullColor Guadalajara',
-    description: 'Contáctanos para cotizar. WhatsApp, correo o visítanos en Guadalajara.',
-  },
+  openGraph: { ...SHARED_OPEN_GRAPH, url: '/contacto', title: 'Contacto | FullColor Guadalajara', description: 'Contáctanos para cotizar. WhatsApp, correo o visítanos en Guadalajara.' },
+  twitter: { ...SHARED_TWITTER, title: 'Contacto | FullColor Guadalajara', description: 'Contáctanos para cotizar. WhatsApp, correo o visítanos en Guadalajara.' },
 };
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import { MARQUEE_CONTACTO } from '@/utils/data/marquee'

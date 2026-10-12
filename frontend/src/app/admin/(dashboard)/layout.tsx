@@ -4,7 +4,7 @@ import { Sidebar } from '@/components/ui/layout/Sidebar';
 import { verifySession } from '@/services/auth/auth.dal';
 
 export const metadata: Metadata = {
-  title: { default: 'Panel', template: '%s | Panel · Octa Building Studio' },
+  title: { default: 'Panel', template: '%s | Panel · FullColor' },
   robots: { index: false, follow: false, nocache: true },
 };
 

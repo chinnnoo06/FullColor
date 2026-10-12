@@ -5,13 +5,25 @@ import { getFCWebProjectsService } from '@/services/server/fcWebProject.service'
 
 export const revalidate = 3600;
 
-const STATIC_ROUTES: MetadataRoute.Sitemap = [
-  { url: SITE.url,                        lastModified: new Date(), changeFrequency: 'monthly', priority: 1   },
-  { url: `${SITE.url}/servicios`,         lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-  { url: `${SITE.url}/depot`,             lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.9 },
-  { url: `${SITE.url}/web`,               lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-  { url: `${SITE.url}/contacto`,          lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.5 },
+// Google ignora un lastmod que siempre es "ahora", así que solo se pone cuando
+// hay una fecha real. Las páginas de copy fijo no lo llevan.
+const staticRoutes = (latestDepot?: Date, latestWeb?: Date): MetadataRoute.Sitemap => [
+  { url: SITE.url,                 lastModified: latestDepot ?? latestWeb, changeFrequency: 'monthly', priority: 1   },
+  { url: `${SITE.url}/servicios`,                                          changeFrequency: 'monthly', priority: 0.8 },
+  { url: `${SITE.url}/depot`,      lastModified: latestDepot,              changeFrequency: 'weekly',  priority: 0.9 },
+  { url: `${SITE.url}/web`,        lastModified: latestWeb,                changeFrequency: 'monthly', priority: 0.8 },
+  { url: `${SITE.url}/contacto`,                                           changeFrequency: 'yearly',  priority: 0.5 },
 ];
+
+const itemDate = (item: { updatedAt?: string; createdAt?: string }) => {
+  const value = item.updatedAt ?? item.createdAt;
+  return value ? new Date(value) : undefined;
+};
+
+const latestDate = (dates: (Date | undefined)[]) =>
+  dates
+    .filter((d): d is Date => d !== undefined)
+    .sort((a, b) => b.getTime() - a.getTime())[0];
 
 const collectDepotProducts = async () => {
   const products = [];
@@ -47,17 +59,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const depotRoutes: MetadataRoute.Sitemap = depotProducts.map((p) => ({
     url: `${SITE.url}/depot/${p.slug}`,
-    lastModified: new Date(),
+    lastModified: itemDate(p),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
 
   const webRoutes: MetadataRoute.Sitemap = webProjects.map((p) => ({
     url: `${SITE.url}/web/${p.slug}`,
-    lastModified: new Date(),
+    lastModified: itemDate(p),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
 
-  return [...STATIC_ROUTES, ...depotRoutes, ...webRoutes];
+  const latestDepot = latestDate(depotProducts.map(itemDate));
+  const latestWeb = latestDate(webProjects.map(itemDate));
+
+  return [...staticRoutes(latestDepot, latestWeb), ...depotRoutes, ...webRoutes];
 }

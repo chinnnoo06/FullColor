@@ -4,7 +4,7 @@ import ToastNotification from "@/components/ui/ToastNotification";
 import localFont from 'next/font/local';
 import { DM_Sans, Barlow } from "next/font/google";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { SITE } from "@/utils/data/site";
+import { SITE, SHARED_OPEN_GRAPH, SHARED_TWITTER } from "@/utils/data/site";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -58,28 +58,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  openGraph: {
-    type: 'website',
-    locale: SITE.locale,
-    url: '/',
-    siteName: SITE.name,
-    title: SITE.title,
-    description: SITE.shortDescription,
-    images: [
-      {
-        url: SITE.ogImage,
-        width: SITE.ogImageWidth,
-        height: SITE.ogImageHeight,
-        alt: SITE.ogImageAlt,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: SITE.title,
-    description: SITE.shortDescription,
-    images: [{ url: SITE.ogImage, alt: SITE.ogImageAlt }],
-  },
+  openGraph: { ...SHARED_OPEN_GRAPH, url: '/', title: SITE.title, description: SITE.shortDescription },
+  twitter: { ...SHARED_TWITTER, title: SITE.title, description: SITE.shortDescription },
   robots: {
     index: true,
     follow: true,
@@ -99,7 +79,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#76B82A',
+  themeColor: SITE.themeColor,
   colorScheme: 'dark',
 };
 

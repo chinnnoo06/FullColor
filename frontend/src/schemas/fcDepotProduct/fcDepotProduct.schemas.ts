@@ -17,6 +17,8 @@ export const FCDepotProductSchema = z.object({
     retailPrice: z.number(),
     midWholesalePrice: z.number().nullable(),
     wholesalePrice: z.number().nullable(),
+    createdAt: z.string().optional(),
+    updatedAt: z.string().optional(),
 });
 
 export type TFCDepotProduct= z.infer<typeof FCDepotProductSchema>;

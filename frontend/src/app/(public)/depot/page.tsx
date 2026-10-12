@@ -1,15 +1,13 @@
 import type { Metadata } from 'next';
+import { SHARED_OPEN_GRAPH, SHARED_TWITTER } from '@/utils/data/site';
 import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'FullColor Depot',
   description: 'Catálogo de artículos personalizables con tu marca. Termos, tazas, playeras, bolsas y más desde Guadalajara. Cotiza al instante.',
   alternates: { canonical: '/depot' },
-  openGraph: {
-    url: '/depot',
-    title: 'FullColor Depot | Artículos personalizables',
-    description: 'Catálogo de artículos personalizables con tu marca desde Guadalajara.',
-  },
+  openGraph: { ...SHARED_OPEN_GRAPH, url: '/depot', title: 'FullColor Depot | Artículos personalizables', description: 'Catálogo de artículos personalizables con tu marca desde Guadalajara.' },
+  twitter: { ...SHARED_TWITTER, title: 'FullColor Depot | Artículos personalizables', description: 'Catálogo de artículos personalizables con tu marca desde Guadalajara.' },
 };
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import { MARQUEE_DEPOT } from '@/utils/data/marquee'

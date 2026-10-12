@@ -2,7 +2,7 @@ import { SimpleHeader } from '@/components/ui/layout/header/SimpleHeader';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Iniciar sesión | Panel · Octa Building Studio' },
+  title: { absolute: 'Iniciar sesión | Panel · FullColor' },
   robots: { index: false, follow: false, nocache: true },
 };
 

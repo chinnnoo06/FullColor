@@ -1,3 +1,6 @@
+
+import type { Metadata } from 'next';
+
 export const SITE = {
   name: 'FullColor',
   url: 'https://fullcolorgdl.com',
@@ -9,7 +12,27 @@ export const SITE = {
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'FullColor – Impresión, personalización y páginas web para negocios en Guadalajara',
+  themeColor: '#76B82A',
 } as const;
+
+export const OG_IMAGE = {
+  url: SITE.ogImage,
+  width: SITE.ogImageWidth,
+  height: SITE.ogImageHeight,
+  alt: SITE.ogImageAlt,
+};
+
+export const SHARED_OPEN_GRAPH: NonNullable<Metadata['openGraph']> = {
+  type: 'website',
+  locale: SITE.locale,
+  siteName: SITE.name,
+  images: [OG_IMAGE],
+};
+
+export const SHARED_TWITTER: NonNullable<Metadata['twitter']> = {
+  card: 'summary_large_image',
+  images: [{ url: SITE.ogImage, alt: SITE.ogImageAlt }],
+};
 
 export const BUSINESS = {
   legalName: 'FullColor GDL',
