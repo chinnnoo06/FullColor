@@ -13,6 +13,7 @@ export const SITE = {
   ogImageHeight: 630,
   ogImageAlt: 'FullColor – Impresión, personalización y páginas web para negocios en Guadalajara',
   themeColor: '#76B82A',
+  logo: '/icon.png',
 } as const;
 
 export const OG_IMAGE = {

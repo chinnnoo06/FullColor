@@ -15,6 +15,7 @@ const localBusiness = {
   description: SITE.description,
   url: SITE.url,
   image: `${SITE.url}${SITE.ogImage}`,
+  logo: `${SITE.url}${SITE.logo}`,
   telephone: BUSINESS.phone,
   email: BUSINESS.email,
   hasMap: BUSINESS.mapsUrl,
