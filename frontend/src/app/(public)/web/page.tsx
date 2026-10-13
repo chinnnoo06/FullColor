@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import { MARQUEE_WEB } from '@/utils/data/marquee'
-import ImgBanner from '@/assets/media/img30.webp'
+import ImgBanner from '@/assets/media/img27.webp'
 import { Hero } from '@/components/fcWeb/Hero'
 import { FCWebProjects } from '@/components/fcWeb/fcWebProjects/FCWebProjects'
 import { getFCWebProjectsService } from '@/services/server/fcWebProject.service'

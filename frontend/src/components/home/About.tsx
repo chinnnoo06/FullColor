@@ -4,7 +4,7 @@ import { SectionTitle } from '../ui/SectionTitle'
 import { SectionLabel } from '../ui/SectionLabel'
 import { LinkButton } from '../ui/buttons/LinkButton'
 import { fadeUp, fadeUpScale } from '@/utils/motion/reveal'
-import ImgAbout from '@/assets/media/img31.webp'
+import ImgAbout from '@/assets/media/img28.webp'
 
 export const About = () => {
     return (

@@ -42,7 +42,7 @@ export const MarqueeBanner = ({
             alt=""
             sizes="100vw"
             placeholder="blur"
-            className={`h-[60svh] lg:h-[clamp(500px,90dvh,720px)] w-full object-cover ${imageClassName ?? ''}`}
+            className={`h-[45svh] lg:h-[clamp(500px,90dvh,720px)] w-full object-cover ${imageClassName ?? ''}`}
           />
         </div>
       </Reveal>

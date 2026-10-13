@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
 import { MARQUEE_DEPOT } from '@/utils/data/marquee'
-import ImgBanner from '@/assets/media/img28.webp'
+import ImgBanner from '@/assets/media/img25.webp'
 import { Hero } from '@/components/fcDepot/Hero'
 import { FCDepotCatalog } from '@/components/fcDepot/fcDepotCatalog/FCDepotCatalog'
 import { ScrollToDepotProduct } from '@/components/fcDepot/fcDepotCatalog/ScrollToDepotProduct'
