@@ -5,7 +5,7 @@ type TFeatureCardProps = {
     index: number
 }
 
-const CARD = 'h-[45svh] w-[70vw] shrink-0 rounded-xl sm:w-[50vw] lg:h-90 lg:w-110'
+const CARD = 'aspect-[4/3] w-[70vw] shrink-0 rounded-xl sm:w-[50vw] lg:w-110'
 
 export const FeatureCard = ({ feature, index }: TFeatureCardProps) => (
     <>

@@ -1,10 +1,10 @@
 import type { IconType } from 'react-icons'
 import { FCWebTechnologySchema, TFCWebTechnology } from '@/schemas/enums.schemas';
 export type { TFCWebTechnology } from '@/schemas/enums.schemas';
-import img12 from '@/assets/media/img12.webp';
-import img13 from '@/assets/media/img13.webp';
-import img14 from '@/assets/media/img14.webp';
-import img18 from '@/assets/media/img18.webp';
+import img1 from '@/assets/media/img29.webp';
+import img2 from '@/assets/media/img30.webp';
+import img3 from '@/assets/media/img31.webp';
+import img4 from '@/assets/media/img32.webp';
 import { FaReact } from 'react-icons/fa'
 import {
   SiTailwindcss,
@@ -19,24 +19,24 @@ import {
 
 export const WEB_FEATURES = [
   {
-    title: 'Adaptable a tu giro',
-    detail: 'Estructura y contenido pensados para lo que vende tu negocio.',
-    image: img18,
+    title: 'Planeación estratégica',
+    detail: 'Conocemos tu negocio y sus objetivos para desarrollar un plan web a tu medida.',
+    image: img1,
   },
   {
-    title: 'Totalmente personalizable',
-    detail: 'Colores, secciones y textos a tu medida, sin plantillas rígidas.',
-    image: img12,
+    title: 'Diseño personalizado',
+    detail: 'Creamos una página web única, adaptada a la identidad y necesidades de tu marca.',
+    image: img2,
   },
   {
-    title: 'Responsiva',
-    detail: 'Se ve bien en celular, tablet y computadora.',
-    image: img14,
+    title: 'Diseño responsivo',
+    detail: 'Tu sitio se adapta a computadoras, tabletas y celulares para una experiencia óptima.',
+    image: img3,
   },
   {
-    title: 'Rápida y optimizada',
-    detail: 'Carga ligera para que el cliente no se vaya antes de conocerte.',
-    image: img13,
+    title: 'Asesoría y atención al cliente',
+    detail: 'Te acompañamos durante el proceso y resolvemos tus dudas para garantizar la mejor experiencia.',
+    image: img4
   },
 ];
 
