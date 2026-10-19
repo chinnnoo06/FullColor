@@ -18,7 +18,6 @@ export const SOCIAL_LINKS = [
 
 export const LEGAL_LINKS = [
   { label: 'Privacidad y aviso legal', href: '/privacidad' },
-  { label: 'Licencia y Creditos', href: '/creditos' },
 ];
 
 export const ADMIN_LINKS = [

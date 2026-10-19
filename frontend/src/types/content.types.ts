@@ -30,3 +30,8 @@ export type TWhatsAppLineCard = {
   url: string;
   image: StaticImageData;
 };
+
+export type TLegalSection = {
+  title: string;
+  content: string;
+};

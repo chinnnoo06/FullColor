@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
 import ToastNotification from "@/components/ui/ToastNotification";
 import localFont from 'next/font/local';
@@ -6,6 +7,9 @@ import { DM_Sans, Barlow } from "next/font/google";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { SITE, SHARED_OPEN_GRAPH, SHARED_TWITTER } from "@/utils/data/site";
 import "./globals.css";
+
+const GA_ID  = 'G-LRZ0FW7LFG';
+const ADS_ID = 'AW-978013065';
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -87,6 +91,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es-MX" className={`${dmSans.variable} ${barlow.variable} ${beyno.variable}`}>
       <body className="bg-thrird text-fourth antialiased min-h-screen">
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`} strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+          gtag('config', '${ADS_ID}');
+          function gtagSendEvent(url) {
+            var callback = function() { if (typeof url === 'string') window.location = url; };
+            gtag('event', 'ads_conversion_Solicitar_cotizaci_n_1', {
+              'event_callback': callback,
+              'event_timeout': 2000,
+            });
+            return false;
+          }
+        `}</Script>
         <StructuredData />
         <ReactQueryProvider>
           {children}
