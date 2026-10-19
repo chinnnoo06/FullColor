@@ -19,7 +19,7 @@ export const Hero = () => {
 
                         <p className='text-fourth/75 text-base lg:text-lg'>
                             Ayudamos a empresas y a emprendedores a resolver sus necesidades de 
-                            impresión, personalización, publicidad y cominicación visual.
+                            impresión, personalización, publicidad y comunicación visual.
                         </p>
 
                         <ul role="list" aria-label="Servicios" className="flex flex-wrap items-center gap-x-5 gap-y-2.5">
