@@ -7,11 +7,6 @@ export type TWebFeature = {
   image: StaticImageData;
 };
 
-/** Producto de FullColor Depot. Hoy es data local; en el futuro vendrá del backend. */
-export type TProduct = {
-  name: string;
-  image: StaticImageData;
-};
 
 export type TContactSocialItem = {
   icon: IconType;

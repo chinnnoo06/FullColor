@@ -5,11 +5,12 @@ type TFeatureCardProps = {
     index: number
 }
 
-const CARD = 'aspect-[4/3] w-[70vw] shrink-0 rounded-xl sm:w-[50vw] lg:w-110'
+const CARD_IMG  = 'w-[70vw] shrink-0 rounded-xl sm:w-[50vw] lg:w-110'
+const CARD_INFO = 'w-[85vw] shrink-0 rounded-xl sm:w-[50vw] lg:w-110'
 
 export const FeatureCard = ({ feature, index }: TFeatureCardProps) => (
     <>
-        <div className={`bg-thrird relative overflow-hidden ${CARD}`}>
+        <div className={`bg-thrird relative aspect-[4/3] overflow-hidden ${CARD_IMG}`}>
             <Image
                 src={feature.image}
                 alt={feature.title}
@@ -19,7 +20,7 @@ export const FeatureCard = ({ feature, index }: TFeatureCardProps) => (
             />
         </div>
 
-        <div className={`border-primary bg-thrird flex items-stretch overflow-hidden border ${CARD}`}>
+        <div className={`border-primary bg-thrird flex items-stretch overflow-hidden border sm:aspect-[4/3] ${CARD_INFO}`}>
             <span className="bg-primary w-1 shrink-0" />
 
             <div className="flex flex-1 flex-col justify-center gap-2.5 p-5 lg:p-10">

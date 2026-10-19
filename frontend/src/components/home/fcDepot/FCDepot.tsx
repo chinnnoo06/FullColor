@@ -4,13 +4,13 @@ import { SectionTitle } from '../../ui/SectionTitle'
 import { LinkButton } from '../../ui/buttons/LinkButton'
 import { ProductSlider } from './ProductSlider'
 import { fadeUp, fadeUpScale } from '@/utils/motion/reveal'
-import { PRODUCTS } from '@/utils/data/products'
 import ImgMain from '@/assets/media/img19.webp'
 import ImgDetail from '@/assets/media/img20.webp'
 import { BulletHex } from '@/components/ui/BulletHex'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { TFCDepotProduct } from '@/schemas/fcDepotProduct/fcDepotProduct.schemas'
 
-export const FCDepot = () => {
+export const FCDepot = ({ fcDepotProducts }: { fcDepotProducts: TFCDepotProduct[] }) => {
     return (
         <section id="inicio-depot" data-section="inicio-depot" className="relative bg-thrird py-15 lg:py-20">
             <div className="mx-auto w-full max-w-[1700px] px-5 lg:px-15">
@@ -57,7 +57,7 @@ export const FCDepot = () => {
                                 Catalogo actual
                             </span>
 
-                            <ProductSlider products={PRODUCTS} />
+                            <ProductSlider products={fcDepotProducts} />
                         </div>
 
                         <p className="font-barlow text-fourth flex items-center gap-2.5 text-lg font-medium italic lg:text-xl">

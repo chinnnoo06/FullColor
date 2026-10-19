@@ -23,7 +23,7 @@ export default async function HomePage() {
       <About />
       <MarqueeBanner image={ImgBanner} items={MARQUEE_HOME} />
       <FCServices fcServiceCategories={fcServiceCategories}/>
-      <FCDepot />
+      <FCDepot fcDepotProducts={fcDepotProducts} />
       <FCWeb />
       <Cta />
       <ContactInfo id="inicio-contacto" dataSection="inicio-contacto" showMoreLink />
