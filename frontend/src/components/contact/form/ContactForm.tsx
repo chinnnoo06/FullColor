@@ -36,7 +36,7 @@ export const ContactForm = () => {
 
         const url = `https://wa.me/${line.number}?text=${encodedMessage}`
 
-        if (typeof gtag !== 'undefined') gtag('event', 'ads_conversion_Solicitar_cotizaci_n_1');
+        if (typeof gtag !== 'undefined') gtag('event', 'conversion_event_submit_lead_form');
         window.open(url, '_blank', 'noopener,noreferrer')
 
         reset()

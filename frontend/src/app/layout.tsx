@@ -100,7 +100,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           gtag('config', '${ADS_ID}');
           function gtagSendEvent(url) {
             var callback = function() { if (typeof url === 'string') window.location = url; };
-            gtag('event', 'ads_conversion_Solicitar_cotizaci_n_1', {
+            gtag('event', 'conversion_event_submit_lead_form', {
               'event_callback': callback,
               'event_timeout': 2000,
             });
