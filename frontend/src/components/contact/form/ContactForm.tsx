@@ -36,7 +36,7 @@ export const ContactForm = () => {
 
         const url = `https://wa.me/${line.number}?text=${encodedMessage}`
 
-        if (typeof gtag !== 'undefined') gtag('event', 'conversion_event_submit_lead_form');
+        if (typeof gtag !== 'undefined') gtag('event', 'conversion_event_outbound_click');
         window.open(url, '_blank', 'noopener,noreferrer')
 
         reset()

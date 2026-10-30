@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { CONTACT_WHATSAPP } from '@/utils/data/contact';
 
 const fireConversion = () => {
-  if (typeof gtag !== 'undefined') gtag('event', 'conversion_event_submit_lead_form');
+  if (typeof gtag !== 'undefined') gtag('event', 'conversion_event_outbound_click');
 };
 
 export const WhatsAppButton = () => {
