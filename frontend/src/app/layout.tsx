@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
 import ToastNotification from "@/components/ui/ToastNotification";
 import localFont from 'next/font/local';
 import { DM_Sans, Barlow } from "next/font/google";
@@ -108,10 +107,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           }
         `}</Script>
         <StructuredData />
-        <ReactQueryProvider>
-          {children}
-          <ToastNotification />
-        </ReactQueryProvider>
+        {children}
+        <ToastNotification />
       </body>
     </html>
   );
