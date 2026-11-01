@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: { ...SHARED_OPEN_GRAPH, url: '/servicios', title: 'Servicios de impresión y personalización | FullColor', description: 'Catálogo de servicios de impresión, personalización y publicidad en Guadalajara.' },
   twitter: { ...SHARED_TWITTER, title: 'Servicios de impresión y personalización | FullColor', description: 'Catálogo de servicios de impresión, personalización y publicidad en Guadalajara.' },
 };
-import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
+import { MarqueeBanner } from '@/components/ui/MarqueeBanner'
 import { MARQUEE_SERVICIOS } from '@/utils/data/marquee'
 import ImgBanner from '@/assets/media/img26.webp'
 import { Hero } from '@/components/fcServices/Hero'

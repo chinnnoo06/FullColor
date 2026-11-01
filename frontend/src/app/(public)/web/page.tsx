@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: { ...SHARED_OPEN_GRAPH, url: '/web', title: 'FullColor Web | Portafolio de proyectos', description: 'Portafolio de páginas web para negocios locales en Guadalajara.' },
   twitter: { ...SHARED_TWITTER, title: 'FullColor Web | Portafolio de proyectos', description: 'Portafolio de páginas web para negocios locales en Guadalajara.' },
 };
-import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
+import { MarqueeBanner } from '@/components/ui/MarqueeBanner'
 import { MARQUEE_WEB } from '@/utils/data/marquee'
 import ImgBanner from '@/assets/media/img27.webp'
 import { Hero } from '@/components/fcWeb/Hero'

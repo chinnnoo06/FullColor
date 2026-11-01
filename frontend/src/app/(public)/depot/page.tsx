@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: { ...SHARED_OPEN_GRAPH, url: '/depot', title: 'FullColor Depot | Artículos personalizables', description: 'Catálogo de artículos personalizables con tu marca desde Guadalajara.' },
   twitter: { ...SHARED_TWITTER, title: 'FullColor Depot | Artículos personalizables', description: 'Catálogo de artículos personalizables con tu marca desde Guadalajara.' },
 };
-import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
+import { MarqueeBanner } from '@/components/ui/MarqueeBanner'
 import { MARQUEE_DEPOT } from '@/utils/data/marquee'
 import ImgBanner from '@/assets/media/img25.webp'
 import { Hero } from '@/components/fcDepot/Hero'

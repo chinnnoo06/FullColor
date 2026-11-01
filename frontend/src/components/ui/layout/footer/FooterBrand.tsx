@@ -5,7 +5,7 @@ import { SocialButtons } from '@/components/ui/buttons/SocialButtons'
 export const FooterBrand = () => (
   <div className="flex w-full flex-col gap-5 items-center text-center lg:items-start lg:text-start lg:w-[30%]">
     <Link href="/" aria-label="Ir al inicio" className="w-15 lg:w-20">
-      <Logo sizes="80px" />
+      <Logo sizes="(min-width: 1024px) 80px, 60px" />
     </Link>
 
     <p className="font-barlow text-xl leading-none font-semibold uppercase lg:text-2xl">

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: { ...SHARED_OPEN_GRAPH, url: '/contacto', title: 'Contacto | FullColor Guadalajara', description: 'Contáctanos para cotizar. WhatsApp, correo o visítanos en Guadalajara.' },
   twitter: { ...SHARED_TWITTER, title: 'Contacto | FullColor Guadalajara', description: 'Contáctanos para cotizar. WhatsApp, correo o visítanos en Guadalajara.' },
 };
-import { MarqueeBanner } from '@/components/sections/MarqueeBanner'
+import { MarqueeBanner } from '@/components/ui/MarqueeBanner'
 import { MARQUEE_CONTACTO } from '@/utils/data/marquee'
 import { WhatsAppLines } from '@/components/contact/whatsAppLines/WhatsAppLines'
 import { Process } from '@/components/contact/process/Process'
