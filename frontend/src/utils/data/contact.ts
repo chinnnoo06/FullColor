@@ -77,6 +77,12 @@ export const CONTACT_SOCIAL_ITEMS = [
   },
 ];
 
+export const SOCIAL_LINKS = [
+  { label: CONTACT_SOCIAL.instagram.label, url: CONTACT_SOCIAL.instagram.url, icon: FaInstagram },
+  { label: CONTACT_SOCIAL.facebook.label, url: CONTACT_SOCIAL.facebook.url, icon: FaFacebookF },
+  { label: CONTACT_WHATSAPP.label, url: CONTACT_WHATSAPP.url, icon: FaWhatsapp },
+];
+
 export const CONTACT_STEPS = [
   {
     step: '01',

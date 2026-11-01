@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from '@/utils/data/navigation';
+import { SOCIAL_LINKS } from '@/utils/data/contact';
 
 type TSocialButtonsProps = {
   className?: string;

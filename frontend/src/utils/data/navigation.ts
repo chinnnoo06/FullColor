@@ -1,6 +1,4 @@
 import { FiLogOut } from 'react-icons/fi';
-import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa6';
-import { CONTACT_WHATSAPP, CONTACT_SOCIAL } from './contact';
 
 export const NAV_LINKS = [
   { label: 'Inicio', href: '/' },
@@ -8,12 +6,6 @@ export const NAV_LINKS = [
   { label: 'FullColor Depot', href: '/depot' },
   { label: 'FullColor Web', href: '/web' },
   { label: 'Contacto', href: '/contacto' },
-];
-
-export const SOCIAL_LINKS = [
-  { label: CONTACT_SOCIAL.instagram.label, url: CONTACT_SOCIAL.instagram.url, icon: FaInstagram },
-  { label: CONTACT_SOCIAL.facebook.label, url: CONTACT_SOCIAL.facebook.url, icon: FaFacebookF },
-  { label: CONTACT_WHATSAPP.label, url: CONTACT_WHATSAPP.url, icon: FaWhatsapp },
 ];
 
 export const LEGAL_LINKS = [
